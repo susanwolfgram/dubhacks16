@@ -94,7 +94,29 @@
 		<div class="posts" ng-show="handle">
 		    <ul >
 		      <li ng-repeat="post in posts" class="mt4 br3 ba b--orange pa0 bg-white w-80 ml6">
-		      <?php $count++; ?> 
+		      <?php
+				  if (isset($_GET['code'])) { // Redirect w/ code
+				      $code = $_GET['code'];
+				      $form_url = "https://connect.stripe.com/oauth/token";
+				      // This is the data to POST to the form. The KEY of the array is the name of the field. The value is the value posted.
+				      $data_to_post = array();
+				      $data_to_post['client_secret'] = 'sk_test_XoQIPeA6WbJQomV7yMJ8K7F8';
+				      $data_to_post['code'] = $code;
+				      $data_to_post['grant_type'] = 'authorization_code';
+				      // Initialize cURL
+				      $curl = curl_init();
+				      // Set the options
+				      curl_setopt($curl,CURLOPT_URL, $form_url);
+				      // This sets the number of fields to post
+				      curl_setopt($curl,CURLOPT_POST, sizeof($data_to_post));
+				      // This is the fields to post in the form of an array.
+				      curl_setopt($curl,CURLOPT_POSTFIELDS, $data_to_post);
+				      //execute the post
+				      $result = curl_exec($curl);
+				      //close the connection
+				      curl_close($curl);
+				  }
+				?>
 		       <!-- | orderBy : 'cents' : true -->
 				<div class="dib w3 tc">
 					<!-- Profile pic -->
@@ -153,6 +175,8 @@
 		  </script>
 		  </button>
 		</form>
+
+		<a href="https://connect.stripe.com/oauth/authorize?response_type=code&client_id=ca_9NxjcPclGzMJ1JtofXOlbevGGglpwRZa&scope=read_write"><input type="image" src="connect.png"></input></a>
     </div>
 	</body>
 </html>
