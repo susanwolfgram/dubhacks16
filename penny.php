@@ -73,7 +73,7 @@
 				<div class="post" ng-repeat="post in posts | orderBy : 'cents' : true">
 					<!-- <h1>Pewdiepie</h1> -->
 					<p>{{post.text}}</p>
-				</div>
+				
 				<div class="writeComment">
 					<p>Write a comment:</p>
 					<textarea ng-model="comment" placeholder="Type something..."></textarea>
@@ -92,8 +92,9 @@
 		        <button ng-click="likePost(post)">+1 cent</button>
 		        <!-- delete a message -->
 		        <button ng-click="posts.$remove(post)">Delete Post</button>
-		      </div></li>
-		    </ul>
+		        </div>
+		      </div><!-- </li> -->
+		   <!--  </ul> -->
 		    </section>
 	    </div>
 
