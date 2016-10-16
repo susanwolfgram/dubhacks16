@@ -93,9 +93,9 @@
 		    <ul >
 		      <li ng-repeat="post in posts | orderBy : 'cents' : true">
 		
-		        <h1>{{post.user}}</h1>
+		        <h1><img src="{{post.userImage}}" alt="user image" />{{post.user}}</h1>
 		        <p>{{post.text}}</p>
-		        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" height="200px" width="200px"  />
+		        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" width="500px"  />
 		        <br />
 		        <div class="writeComment">
 					<p>Write a comment:</p>

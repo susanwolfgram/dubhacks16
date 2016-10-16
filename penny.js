@@ -154,6 +154,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	$scope.addPost = function() {
 		$scope.posts.$add({
 			user: userObj.handle, 
+			userImage: userObj.image,
 		  	text: $scope.newPostText,
 		  	cents: 0,
 			image: imgUrl? imgUrl : "",
