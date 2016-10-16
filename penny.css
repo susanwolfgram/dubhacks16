@@ -103,10 +103,6 @@ section.whatever {
     margin-left: 35px;
 }
 
-div {
-    position: absolute;
-}
-
 div.post, div.writeComment, div.comment {
     background-color: white;
 }
