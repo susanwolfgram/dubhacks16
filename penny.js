@@ -72,7 +72,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
     } else {
     // var commentArr = $firebaseArray(post.comments);
     // commentArr.push(comment); 
-    post.comments += comment; 
+    post.comments += [comment]; 
     $scope.posts.$save(post); 
     // $scope.songs = []; 
     // var baz = new Firebase("https://penny-fyt-123.firebaseio.com/posts/" + post.$id + "/" + post.comment);      
