@@ -182,7 +182,7 @@
 		  </button>
 		</form>
 
-		<a href="https://connect.stripe.com/oauth/authorize?response_type=code&client_id=ca_9NxjcPclGzMJ1JtofXOlbevGGglpwRZa&scope=read_write"><input type="image" src="connect.png"></input></a>
+		<a ng-show="handle" href="https://connect.stripe.com/oauth/authorize?response_type=code&client_id=ca_9NxjcPclGzMJ1JtofXOlbevGGglpwRZa&scope=read_write"><input type="image" src="connect.png"></input></a>
     </div>
 	</body>
 </html>
