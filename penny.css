@@ -1,13 +1,186 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900);
 
+html {
+    background-color: rgba(131, 56, 21, .11);
+}
+
 body {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-size: 12px;
     line-height: 1.4;
     margin: 0;
     color: #323232;
+    background-color: #c19578;
+    overflow: hidden;
+}
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Work Sans', sans-serif;
+}
+
+header, div.post h1 {
+    background-color: #CC5608;
+    padding: 5px;
+    margin-bottom: 30px;
+}
+
+.head-circle, .s-circle {
+    width: 30px;
+    height: 30px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    background: gray;
+}
+
+div.invis, div.writeComment, div.comment {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.invis {
+    width: 90%;
+    position: relative;
+    max-width: 430px;
+    /*border: 1px solid black;      This is for debugging*/
+}
+
+body>div.invis {
+    margin-bottom: 30px;
+}
+
+.post-circles {
+    width: 70px;
+    position: absolute;
+    /*border: 1px solid black;      This is for debugging*/
+}
+
+.b-circle, .s-circle {
+    background-color: white;
+    text-align: center;
+    padding-top: 5px;
+    border: 1px solid #CC5608;
+    color: #CC5608;
+}
+
+.b-circle {
+    width: 70px;
+    height: 70px;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    background-image: url("chris.jpg");
+    background-size: cover;
+}
+
+.s-circle {
+    /*margin: 5px auto 5px auto;*/
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post-circles .s-circle {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+section.whatever, div.post, div.post p, div.writeComment, div.comment {
+    border-radius: 10px;
+}
+
+section.whatever, div.writeComment, div.comment {
+    width: 80%;
+    background-color: #e2d2c7;
+    border: 1px solid #CC5608;
+}
+
+section.whatever, div.comment {
+    width: 90%;
+}
+
+section.whatever {
+    margin-left: 35px;
+}
+
+div.post, div.writeComment, div.comment {
+    background-color: white;
+}
+
+div.post, div.writeComment {
+    overflow: hidden;
+}
+
+div.post h1 {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: white;
+}
+
+div.post h1, div.post p {
+    padding: 10px 30px 10px 50px;
+}
+
+div.post p {
+    margin-bottom: 0px;
+}
+
+div.post button {
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+div.writeComment, div.comment {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px 5px 5px 15px;
+}
+
+div.writeComment {
+    width: 90%;
+    color: #CC5608;
+}
+
+div.comment {
+    border: 1px solid black;
+    margin-left: 15px;
+    padding-left: 20px;
+}
+
+textarea {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 80%;
+    border: none;
+    display: block;
+}
+
+button {
+    float: right;
+    background-color: #CC5608;
+    color: white;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font: thin;
+}
+
+.comment-circles {
+    width: 30px;
+    position: absolute;
+    /*border: 1px solid black;      For debugging*/
+}
+
+.comment-circles .s-circle {
+    background-image: url("chris.jpg");
+    background-size: cover;
+}
+
+p.c-paragraph {
+    color: gray;
 }
 
 nav {
