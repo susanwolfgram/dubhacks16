@@ -1,4 +1,3 @@
-
 <?php
   require_once('./config.php');
 
@@ -15,7 +14,7 @@
       'currency' => 'usd'
   ));
   echo('<script type="text/javascript">');
-  require_once('penny.js'); 
+  include_once('penny.js'); 
   echo('addOneDollar()');
   echo('</script>'); 
 ?>
