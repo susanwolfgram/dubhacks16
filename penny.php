@@ -97,6 +97,10 @@
 		        <p>{{post.text}}</p>
 		        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" width="500px"  />
 		        <br />
+		        <h2 ng-click="displayComments(post)">Open Comments</h2>
+		        <div id="comments" ng-show="yesComments" >
+		        	<p ng-repeat="comment in commentArr">{{comment.comment}}</p>
+		        </div>
 		        <div class="writeComment">
 					<p>Write a comment:</p>
 					<textarea ng-model="comment" placeholder="Leave your two cents..." class="form-control" rows="1"></textarea>

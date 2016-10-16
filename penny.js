@@ -30,6 +30,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 			userObj = $firebaseObject(currentUser);
 			console.log(userObj);
 			$scope.handle = true; 
+			ref = firebase.database().ref().child("posts");
 	     	$scope.$digest();
         }
     }
@@ -174,6 +175,11 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 		}
 		post.cents += 2; 
 		$scope.posts.$save(post); 
+	}
+	$scope.yesComments = false; 
+	$scope.displayComments = function(post) {
+		$scope.yesComments = !$scope.yesComments; 
+		$scope.commentArr = $firebaseArray(post.comments);
 	}
 
 	$scope.likePost = function(post) {
