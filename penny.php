@@ -23,6 +23,7 @@
 		<!-- Scripts -->
 		<link href="penny1.css" rel="stylesheet" type="text/css" />
 		<script type="text/javascript" src="penny.js"></script>
+		<script type="text/javascript" src="bootstrap-filestyle.min.js"> </script>
 
 <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase.js"></script>
 <script>
@@ -75,13 +76,14 @@
 				<!-- <div class="post"> -->
 			    <form ng-submit="addPost()" ng-show="handle">
 			      <textarea ng-model="newPostText" placeholder="Compose a post..." class="form-control" rows="5"></textarea>
-			      <div class="top">
-			        <input type="file" onchange="angular.element(this).scope().previewFile()" style="float:left;" />
+			      
+			      <input type="file" onchange="angular.element(this).scope().previewFile()" style="float:left;" class="filestyle" data-classButton="btn btn-primary" data-input="false" data-classIcon="icon-plus" data-buttonText="Upload an image" />
+			        <!-- <input type="file" onchange="angular.element(this).scope().previewFile()" style="float:left;" /> -->
 			        <img ng-show="fileName" src="" id="preview" height="200px" width="200px" alt="Image preview..." style="float:right">
 			  		<br />
-			      <button class="md-button" type="submit" style="clear: both;">Add Post</button>
+			      <button class="md-button" type="submit" style="display: block;clear: both;">Add Post</button>
 			    </form>
-			    </div>
+			    
 	    </div>
 	
 		<!-- Posts -->
