@@ -80,7 +80,8 @@
 
 			      <!-- <input type="file" onchange="angular.element(this).scope().previewFile()" style="float:left;" class="filestyle" data-classButton="btn btn-primary" data-input="false" data-classIcon="icon-plus" data-buttonText="Upload an image" /> -->
 			        <input type="file" onchange="angular.element(this).scope().previewFile()" style="float:left;" />
-			        <img ng-show="fileName" src="" id="preview" height="200px" width="200px" alt="Image preview..." style="float:right">
+			        <br />
+			        <img ng-show="fileName" src="" id="preview" height="200px" width="200px" alt="Image preview..." style="clear:both;">
 			  		<br />
 			      <button class="md-button" type="submit" style="display: block;clear: both;">Add Post</button>
 			    </form>
@@ -92,13 +93,17 @@
 		    <ul >
 		      <li ng-repeat="post in posts | orderBy : 'cents' : true">
 		
-		        <i class="material-icons">account_circle</i>
+		        <h1><img src="{{post.userImage}}" alt="user image" height="50px" style="border-radius: 20px;" />{{post.user}}</h1>
 		        <p>{{post.text}}</p>
-		        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" height="200px" width="200px"  />
+		        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" width="500px"  />
 		        <br />
+		        <button ng-click="displayComments(post)">Open Comments</button>
+		        <div id="comments" ng-show="yesComments" >
+		        	<p ng-repeat="comment in commentArr">{{comment.comment}}</p>
+		        </div>
 		        <div class="writeComment">
 					<p>Write a comment:</p>
-					<textarea ng-model="comment" placeholder="Leave your two cents..." class="form-control" rows="3"></textarea>
+					<textarea ng-model="comment" placeholder="Leave your two cents..." class="form-control" rows="1"></textarea>
 					<button ng-click="addComment(post, comment)">Add 2 cents</button>
 				</div>
 		        <!-- <input ng-model="comment"/> -->

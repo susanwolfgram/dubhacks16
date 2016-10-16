@@ -8,6 +8,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	var usersFB = firebase.database().ref().child("users"); 
 	var usersArr = $firebaseArray(usersFB); 
 	var userObj;
+
 	//var userEmail; 
 	// $scope.addUser = function() {
 	// 	firebase.auth().createUserWithEmailAndPassword($scope.email, $scope.password).then(function(firebaseUser) {
@@ -29,6 +30,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 			userObj = $firebaseObject(currentUser);
 			console.log(userObj);
 			$scope.handle = true; 
+			ref = firebase.database().ref().child("posts");
 	     	$scope.$digest();
         }
     }
@@ -152,7 +154,8 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 
 	$scope.addPost = function() {
 		$scope.posts.$add({
-			user: user, 
+			user: userObj.handle, 
+			userImage: userObj.image,
 		  	text: $scope.newPostText,
 		  	cents: 0,
 			image: imgUrl? imgUrl : "",
@@ -165,13 +168,18 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	$scope.addComment = function(post, comment) {
 		if (post.comments == 0) {
 			console.log(post.$id);
-			post.comments = [comment]; 
+			post.comments = [{"comment" : comment, "user" : userObj.handle}]; 
 		} else {
 		    console.log(post.comments);
-		    post.comments.push(comment);
+		    post.comments.push({"comment": comment, "user": userObj.handle});
 		}
 		post.cents += 2; 
 		$scope.posts.$save(post); 
+	}
+	$scope.yesComments = false; 
+	$scope.displayComments = function(post) {
+		$scope.yesComments = !$scope.yesComments; 
+		$scope.commentArr = $firebaseArray(post.comments);
 	}
 
 	$scope.likePost = function(post) {
