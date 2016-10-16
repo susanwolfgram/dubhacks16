@@ -57,6 +57,7 @@
 	        <input ng-model="post.text" ng-change="posts.$save(post)" />
 	        <input ng-model="comment"/>
 	        <button ng-click="addComment(post, comment)">Add 2 cents</button>
+	        <button ng-click="likePost(post)">+1 cent</button>
 	        <!-- delete a message -->
 	        <button ng-click="posts.$remove(post)">Delete Message</button>
 	      </li>
