@@ -14,11 +14,10 @@
       'amount'   => 100,
       'currency' => 'usd'
   ));
-  echo('<script type="text/javascript" src="penny.js"></script>'); 
-  echo '<script type="text/javascript">',
-     'addOneDollar();',
-     '</script>'
-  ;
+  echo('<script type="text/javascript">');
+  require_once('penny.js'); 
+  echo('addOneDollar()');
+  echo('</script>'); 
 ?>
 
 <?php
