@@ -16,7 +16,7 @@
   const DEFAULT_URL = 'https://penny-fyt-123.firebaseio.com';
   const DEFAULT_TOKEN = 'AIzaSyDeKkdADM8ybE_etN7XwiyrA-tfSWVozi4';
   const DEFAULT_PATH = '/firebase/example';
-  $firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
+  $firebase = new FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
   $test = array(
     "foo" => "bar",
     "i_love" => "lamp",
