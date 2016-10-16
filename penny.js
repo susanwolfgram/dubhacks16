@@ -36,6 +36,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
   // the message is automatically added to our Firebase database!
   $scope.addPost = function() {
     $scope.posts.$add({
+    	user: firebaseUser.uid, 
       text: $scope.newPostText
     });
   };
