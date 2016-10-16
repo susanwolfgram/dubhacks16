@@ -28,7 +28,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 		// var currentUser = userArr.$indexFor("" + user);
 		// console.log(userArr[currentUser]);
      	$scope.$digest();
-   	}).then(function() {
+   	}).then(function(userObj) {
    		$scope.handle = userObj.handle; 
    		console.log(userObj.handle);
    	}).catch(function(error) {
