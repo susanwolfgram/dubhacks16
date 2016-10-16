@@ -96,7 +96,7 @@
 					<!-- Profile pic -->
 					<img src="{{post.userImage}}" alt="user image" class="postAvatar br-100 mw4 ba b--red db" />
 					<!-- Like -->
-					<div class="like buttons"></div>
+					<div title="add 1 cent" ng-click="likePost(post)" class="like buttons"></div>
 
 					<!-- <img src="icons/like.svg" alt="Like" class="db buttons" /> -->
 					<!-- Save -->
@@ -111,7 +111,7 @@
 		        <p>{{post.text}} {{post.cents}} cents</p>
 		        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" width="500px"  />
 		        <br />
-		        <h3 ng-show="post.comments != 0" ng-click="displayComments(post); listClicked? listClicked = false : listClicked = true">Open Comments</h3>
+		        <h3 ng-show="post.comments != 0" ng-click="displayComments(post); listClicked = !listClicked;">Open Comments</h3>
 		        <div id="comments" ng-show="listClicked" >
 		        	<hr />
 		        	<p ng-repeat="comment in commentArr">{{comment.comment}} <span class="commenter">-{{comment.user}}</span></p><hr /> 
@@ -123,7 +123,7 @@
 				</div>
 		        <!-- <input ng-model="comment"/> -->
 		        <!-- <button ng-click="addComment(post, comment)">Add 2 cents</button> -->
-		        <button ng-click="likePost(post)">+1 cent</button>
+		        <!-- <button ng-click="likePost(post)">+1 cent</button> -->
 		        <!-- delete a message -->
 		        <button ng-show="post.user == userName" ng-click="posts.$remove(post)">Delete Post</button>
 		     </div>
