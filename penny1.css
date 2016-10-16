@@ -132,6 +132,14 @@ ul {
   border: none;
 }
 
+.cents {
+  height: 4rem;
+  width: 4rem;
+
+  margin-left: -1.9rem;
+  margin-top: 1.3rem;
+}
+
 .postContent {
   /*position: absolute;*/
   /*right: 0;*/

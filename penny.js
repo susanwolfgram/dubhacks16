@@ -202,7 +202,6 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 		for (i = 0; i < tarea.length; i++) {
 		    tarea[i].value = "";
 		}
-
 	}
 
 	//$scope.yesComments = false; 
