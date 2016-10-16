@@ -14,6 +14,6 @@
       'currency' => 'usd'
   ));
 }
-echo('success');
+// echo('success');
 header('Location: penny.php?dollar=true');
 ?>
