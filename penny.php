@@ -42,6 +42,9 @@
 
 	<!-- Initiate app and controller on body -->
 	<body ng-app="myApp" ng-controller="myCtrl" ng-init="load()">
+	<header>
+		<div class="head-circle"></div>
+	</header>
 	<?php require_once('./config.php'); ?>
 		<form action="charge.php" method="post" ng-show="handle">
 		  <button ng-click="addOneDollar()"> <!-- not sure how to add one dollar after success --> 
@@ -77,16 +80,20 @@
 	        <button ng-click="posts.$remove(post)">Delete Post</button>
 	      </li>
 	    </ul>
-	    <!-- push a new message onto the array -->
-	    <form ng-submit="addPost()" ng-show="handle">
-	      <input ng-model="newPostText" />
-	      <div class="top">
-	        <input type="file" onchange="angular.element(this).scope().previewFile()" style="float:left;">
-	        <img src="" id="preview" height="200px" width="200px" alt="Image preview..." style="float:right">
-	        <!-- <button ng-click="addImage()">Add Post</button> -->
-    	</div>
-	      <button type="submit">Add Post</button>
-	    </form>
+
+
+	    <!-- Add Post  -->
+	    <div class="invis">
+		    <form ng-submit="addPost()" ng-show="handle">
+		      <input ng-model="newPostText" />
+		      <div class="top">
+		        <input type="file" onchange="angular.element(this).scope().previewFile()" style="float:left;">
+		        <img src="" id="preview" height="200px" width="200px" alt="Image preview..." style="float:right">
+		        <!-- <button ng-click="addImage()">Add Post</button> -->
+	    	</div>
+		      <button type="submit">Add Post</button>
+		    </form>
+	    </div>
 
 	    
     	<button ng-click="signOut()" ng-show="handle">Sign Out</button>
