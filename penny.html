@@ -70,7 +70,7 @@
 	    </form>
 
 	    <div class="top">
-	        <input type="file" onchange="previewFile()" style="float:left;">
+	        <input type="file" onchange="angular.element(this).scope().previewFile()" style="float:left;">
 	        <img src="" id="preview" height="200px" width="200px" alt="Image preview..." style="float:right">
 	        <button ng-click="addImage()">Add Post</button>
     	</div>
