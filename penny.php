@@ -43,13 +43,15 @@
 	<!-- Initiate app and controller on body -->
 	<body ng-app="myApp" ng-controller="myCtrl" ng-init="load()">
 	<?php require_once('./config.php'); ?>
-		<form ng-click="addOneDollar()" action="charge.php" method="post" >
-		  <script  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+		<form action="charge.php" method="post" >
+		  <button ng-click="addOneDollar()">
+		  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 		          data-key="<?php echo $stripe['publishable_key']; ?>"
 		          data-description="Access for a year"
 		          data-amount="100"
 		          data-locale="auto">  	
 		  </script>
+		  </button>
 		</form>
 		<!-- <button ng-click="addOneDollar()">Test Add One Dollar</button> -->
 		<form ng-submit="signIn()" ng-show="!handle" >
