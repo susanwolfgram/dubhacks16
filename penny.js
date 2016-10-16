@@ -103,12 +103,14 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 		if (post.comments == 0) {
 			console.log(post.$id);
 			post.comments = [comment]; 
-		    $scope.posts.$save(post); 
+		    // $scope.posts.$save(post); 
 		} else {
 		    console.log(post.comments);
 		    post.comments.push(comment);
-		    $scope.posts.$save(post); 
+		    // $scope.posts.$save(post); 
 		}
+		post.cents += 2; 
+		$scope.posts.$save(post); 
 	}
 
 	$scope.likePost = function(post) {
