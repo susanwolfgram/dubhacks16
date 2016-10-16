@@ -98,11 +98,6 @@
 					<img src="{{post.userImage}}" alt="user image" class="postAvatar br-100 mw4 ba b--red db" />
 					<!-- Like -->
 					<div title="add 1 cent" ng-click="likePost(post)" class="like buttons"></div>
-
-					<!-- <img src="icons/like.svg" alt="Like" class="db buttons" /> -->
-					<!-- Save -->
-					<!-- <div class="save buttons"></div> -->
-		       <!--  <h1><img src="{{post.userImage}}" alt="user image" height="50px" style="border-radius: 20px;" />{{post.user}}</h1> -->
 		       </div>
 
 				<div class="postContent dib v-top">
@@ -113,7 +108,7 @@
 		        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" width="500px"  />
 		        <br />
 		        <h3 ng-show="post.comments != 0" ng-click="displayComments(post)">Open Comments</h3>
-		        <div id="comments" ng-show="yesComments" >
+		        <div id="comments" ng-show="displayComments(post)" >
 		        	<hr />
 		        	<p ng-repeat="comment in commentArr">{{comment.comment}} <span class="commenter">-{{comment.user}}</span></p><hr /> 
 		        </div>
