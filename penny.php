@@ -92,7 +92,7 @@
 		    <ul >
 		      <li ng-repeat="post in posts | orderBy : 'cents' : true">
 		
-		        <i class="material-icons">account_circle</i>
+		        <h1>{{post.user}}</h1>
 		        <p>{{post.text}}</p>
 		        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" height="200px" width="200px"  />
 		        <br />
