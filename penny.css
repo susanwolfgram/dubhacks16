@@ -25,6 +25,15 @@ header, div.post h1 {
     margin-bottom: 30px;
 }
 
+.head-circle, .s-circle {
+    width: 30px;
+    height: 30px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    background: gray;
+}
+
 div.invis, div.writeComment, div.comment {
     margin-left: auto;
     margin-right: auto;
@@ -34,33 +43,47 @@ div.invis {
     width: 90%;
     position: relative;
     max-width: 430px;
+    /*border: 1px solid black;      This is for debugging*/
 }
 
-.div-circles {
-    width: 80px;
+body>div.invis {
+    margin-bottom: 30px;
+}
+
+.post-circles {
+    width: 70px;
+    position: absolute;
+    /*border: 1px solid black;      This is for debugging*/
+}
+
+.b-circle, .s-circle {
+    background-color: white;
+    text-align: center;
+    padding-top: 5px;
+    border: 1px solid #CC5608;
+    color: #CC5608;
 }
 
 .b-circle {
-    width: 80px;
-    height: 80px;
-    -webkit-border-radius: 40px;
-    -moz-border-radius: 40px;
-    border-radius: 40px;
+    width: 70px;
+    height: 70px;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
     background-image: url("chris.jpg");
     background-size: cover;
-    position: absolute;
 }
 
-.circle {
-    width: 40px;
-    height: 40px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    border-radius: 20px;
-    background: gray;
+.s-circle {
+    /*margin: 5px auto 5px auto;*/
+    margin-left: auto;
+    margin-right: auto;
 }
 
-
+.post-circles .s-circle {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 
 section.whatever, div.post, div.post p, div.writeComment, div.comment {
     border-radius: 10px;
@@ -72,9 +95,12 @@ section.whatever, div.writeComment, div.comment {
     border: 1px solid #CC5608;
 }
 
-section.whatever {
+section.whatever, div.comment {
     width: 90%;
-    float: right;
+}
+
+section.whatever {
+    margin-left: 35px;
 }
 
 div.post, div.writeComment, div.comment {
@@ -107,6 +133,8 @@ div.writeComment {
 
 div.comment {
     border: 1px solid black;
+    margin-left: 15px;
+    padding-left: 20px;
 }
 
 textarea {
@@ -114,7 +142,6 @@ textarea {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     width: 80%;
-    color: gray;
     border: none;
     display: block;
 }
@@ -127,6 +154,17 @@ button {
     padding-left: 10px;
     padding-right: 10px;
     font: thin;
+}
+
+.comment-circles {
+    width: 30px;
+    position: absolute;
+    /*border: 1px solid black;      For debugging*/
+}
+
+.comment-circles .s-circle {
+    background-image: url("chris.jpg");
+    background-size: cover;
 }
 
 p.c-paragraph {
