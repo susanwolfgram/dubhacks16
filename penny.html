@@ -42,7 +42,7 @@
 
 	<!-- Initiate app and controller on body -->
 	<body ng-app="myApp" ng-controller="myCtrl">
-		<form ng-submit="signIn()">
+		<form ng-submit="signIn()" ng-show="!user" >
 			<input type="text" ng-model="email"/>
 			<input type="text" ng-model="password"/>
 			<button type="submit">Sign In</button>
