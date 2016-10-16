@@ -71,7 +71,7 @@
 		<div class="invis" ng-show="handle">
 		<section class="whatever">
 				<div class="post" ng-repeat="post in posts | orderBy : 'cents' : true">
-					<!-- <h1>Pewdiepie</h1> -->
+					<h1>USER</h1>
 					<p>{{post.text}}</p>
 				
 				<div class="writeComment">
