@@ -19,8 +19,8 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
      	console.log("Signed in as:", firebaseUser.uid);
      	user = firebaseUser.uid; 
      	$scope.userEmail = $scope.email; 
-     	var users = firebase.database().ref().child("users");
-		var userArr = $firebaseArray(users);
+     	var users1 = firebase.database().ref().child("users");
+		var userArr = $firebaseArray(users1);
 		console.log(userArr);
 		var currentUser = userArr.$getRecord(user);
 		console.log(currentUser.handle);
