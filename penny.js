@@ -42,37 +42,50 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
   // download the data into a local object
   //$scope.data = $firebaseObject(ref);
   // putting a console.log here won't work, see below
-  var ref = firebase.database().ref().child("posts");
-  // create a synchronized array
-  $scope.posts = $firebaseArray(ref);
-  // add new items to the array
-  // the message is automatically added to our Firebase database!
-  $scope.addPost = function() {
-    $scope.posts.$add({
-    	user: user, 
-      	text: $scope.newPostText,
-      	cents: 0,
-      	// time: Firebase.ServerValue.TIMESTAMP,
-      	comments: 0
-    });
-  };
+	var ref = firebase.database().ref().child("posts");
+	// create a synchronized array
+	$scope.posts = $firebaseArray(ref);
+	// add new items to the array
+	// the message is automatically added to our Firebase database!
+	$scope.addPost = function() {
+		$scope.posts.$add({
+			user: user, 
+		  	text: $scope.newPostText,
+		  	cents: 0,
+			image: "",
+		  	// time: Firebase.ServerValue.TIMESTAMP,
+		  	comments: 0
+		});
+	};
 
-  $scope.addComment = function(post, comment) {
-    if (post.comments == 0) {
-    	console.log(post.$id);
-    	post.comments = [comment]; 
-	    $scope.posts.$save(post); 
-    } else {
-	    console.log(post.comments);
-	    post.comments.push(comment);
-	    $scope.posts.$save(post); 
-  	}
-  }
+	$scope.addImage = function() {
+		console.log(url);
+		// $scope.posts.$add({
+		// 	user: user, 
+		//   	text: $scope.newPostText,
+		//   	cents: 0,
+		//   	image: 
+		//   	// time: Firebase.ServerValue.TIMESTAMP,
+		//   	comments: 0
+		// });
+	};
+	
+	$scope.addComment = function(post, comment) {
+		if (post.comments == 0) {
+			console.log(post.$id);
+			post.comments = [comment]; 
+		    $scope.posts.$save(post); 
+		} else {
+		    console.log(post.comments);
+		    post.comments.push(comment);
+		    $scope.posts.$save(post); 
+		}
+	}
 
-  $scope.likePost = function(post) {
-  	post.cents++;
-  	$scope.posts.$save(post); 
-  }
+	$scope.likePost = function(post) {
+		post.cents++;
+		$scope.posts.$save(post); 
+	}
 
 });
 

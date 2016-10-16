@@ -25,50 +25,50 @@
 
 <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase.js"></script>
 <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyDeKkdADM8ybE_etN7XwiyrA-tfSWVozi4",
-    authDomain: "penny-fyt-123.firebaseapp.com",
-    databaseURL: "https://penny-fyt-123.firebaseio.com",
-    storageBucket: "penny-fyt-123.appspot.com",
-    messagingSenderId: "370933887602"
-  };
-  firebase.initializeApp(config);
-  var storageRef = firebase.storage().ref();
-    var imagesRef = storageRef.child('images');
-    
-    function previewFile(){
-    var file =document.querySelector('input[type=file]').files[0];
-    var metadata = {
-    	contentType: 'image/jpeg'
-    };
+	// Initialize Firebase
+	var config = {
+	apiKey: "AIzaSyDeKkdADM8ybE_etN7XwiyrA-tfSWVozi4",
+	authDomain: "penny-fyt-123.firebaseapp.com",
+	databaseURL: "https://penny-fyt-123.firebaseio.com",
+	storageBucket: "penny-fyt-123.appspot.com",
+	messagingSenderId: "370933887602"
+	};
+	firebase.initializeApp(config);
+	var storageRef = firebase.storage().ref();
+	var imagesRef = storageRef.child('images');
 
-    var uploadTask = storageRef.child('images/' + file.name).put(file, metadata);
-    uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
-    function(snapshot) {
-        var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        console.log('Upload is ' + progress + '% done');
-        switch (snapshot.state) {
-            case firebase.storage.TaskState.PAUSED: 
-                console.log('Upload is paused');
-                break;
-            case firebase.storage.TaskState.RUNNING:
-                console.log('Upload is running');
-                break;
-        }
-        }, function(error) {
-            console.log('error while uploading')
-        }, function() {
-            var starsRef = storageRef.child('images/'+ file.name);
-            starsRef.getDownloadURL().then(function(url) {
-                document.querySelector('#preview').src=url;
-                var t=document.querySelector('p')
-                //t.innerHTML ='firebase storage path URL: '+url
-            }).catch(function(error) {
-                console.log('error while downloading file');
-            });
-        });
-    }
+	function previewFile(){
+	    var file =document.querySelector('input[type=file]').files[0];
+	    var metadata = {
+	    	contentType: 'image/jpeg'
+	};
+
+	var uploadTask = storageRef.child('images/' + file.name).put(file, metadata);
+	uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
+	function(snapshot) {
+	    var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+	    console.log('Upload is ' + progress + '% done');
+	    switch (snapshot.state) {
+	        case firebase.storage.TaskState.PAUSED: 
+	            console.log('Upload is paused');
+	            break;
+	        case firebase.storage.TaskState.RUNNING:
+	            console.log('Upload is running');
+	            break;
+	    }
+	    }, function(error) {
+	        console.log('error while uploading')
+	    }, function() {
+	        var starsRef = storageRef.child('images/'+ file.name);
+	        starsRef.getDownloadURL().then(function(url) {
+	            document.querySelector('#preview').src=url;
+	            //var t=document.querySelector('p')
+	            //t.innerHTML ='firebase storage path URL: '+url
+	        }).catch(function(error) {
+	            console.log('error while downloading file');
+	        });
+	    });
+	}
 </script>
 <!-- <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-auth.js"></script> -->
@@ -105,9 +105,10 @@
 	    </form>
 
 	    <div class="top">
-        <input type="file" onchange="previewFile()" style="float:left;">
-        <img src="" id="preview" height="500px" width="500px" alt="Image preview..." style="float:right">
-    </div>
+	        <input type="file" onchange="previewFile()" style="float:left;">
+	        <img src="" id="preview" height="500px" width="500px" alt="Image preview..." style="float:right">
+	        <button ng-click="addImage()">Add Post</button>
+    	</div>
 	</body>
 </html>
 
