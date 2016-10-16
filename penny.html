@@ -63,7 +63,7 @@
             starsRef.getDownloadURL().then(function(url) {
                 document.querySelector('#preview').src=url;
                 var t=document.querySelector('p')
-                t.innerHTML ='firebase storage path URL: '+url
+                //t.innerHTML ='firebase storage path URL: '+url
             }).catch(function(error) {
                 console.log('error while downloading file');
             });
