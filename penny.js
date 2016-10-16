@@ -32,7 +32,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	    $scope.$digest();
 	}
 
-	$interval(myTimer, 1000, 5);
+	$interval(myTimer, 1000, 3);
 	
 	$scope.load = function () {
         if (getCookie("user") != "") {
@@ -98,10 +98,8 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 		console.log(userObj);
 		$scope.handle = true; 
 		setCookie("user", user); 
-     	$scope.$digest();
-     	$scope.credits = userObj.credit; 
-     	console.log(userObj.credit);
-     	//setVariables = setInterval(myTimer, 1000);
+     	$scope.$digest(); 	
+     	myTimer(); 
 
 
    	}).catch(function(error) {
@@ -212,9 +210,12 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	}
 
 	$scope.addOneDollar = function() {
-		console.log(userObj);
+		
 		userObj.credit += 100; 
+		
 		userObj.$save(); 
+
+		myTimer(); 
 	}
 
 	function addOneDollar() {
