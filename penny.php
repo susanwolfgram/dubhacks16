@@ -43,7 +43,7 @@
 	<!-- Initiate app and controller on body -->
 	<body ng-app="myApp" ng-controller="myCtrl" ng-init="load()">
 	<?php require_once('./config.php'); ?>
-		<form action="charge.php" method="post" >
+		<form action="charge.php" method="post" ng-show="handle">
 		  <button ng-click="addOneDollar()"> <!-- not sure how to add one dollar after success --> 
 		  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 		          data-key="<?php echo $stripe['publishable_key']; ?>"
@@ -78,7 +78,7 @@
 	      </li>
 	    </ul>
 	    <!-- push a new message onto the array -->
-	    <form ng-submit="addPost()">
+	    <form ng-submit="addPost()" ng-show="handle">
 	      <input ng-model="newPostText" />
 	      <button type="submit">Add Post</button>
 	    </form>
