@@ -6,7 +6,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	var currentUser; 
 	var usersFB = firebase.database().ref().child("users"); 
 	var usersArr = $firebaseArray(usersFB); 
-	//var userObj;
+	var userObj;
 	//var userEmail; 
 	// $scope.addUser = function() {
 	// 	firebase.auth().createUserWithEmailAndPassword($scope.email, $scope.password).then(function(firebaseUser) {
@@ -25,7 +25,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
         	user = getCookie("user"); 
         	$scope.userEmail = $scope.email; 
 	     	currentUser = firebase.database().ref().child("users").child(user);
-			$scope.userObj = $firebaseObject(currentUser);
+			userObj = $firebaseObject(currentUser);
 			console.log(userObj);
 			$scope.handle = true; 
 	     	$scope.$digest();
@@ -70,7 +70,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
      	user = firebaseUser.uid; 
      	$scope.userEmail = $scope.email; 
      	currentUser = firebase.database().ref().child("users").child(user);
-		$scope.userObj = $firebaseObject(currentUser);
+		userObj = $firebaseObject(currentUser);
 		console.log(userObj);
 		$scope.handle = true; 
 		setCookie("user", user, 1); 
