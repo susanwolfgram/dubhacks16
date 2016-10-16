@@ -11,7 +11,7 @@ myApp.controller('myCtrl', function($scope, $firebaseAuth, $firebaseArray, $fire
 	var ref = new Firebase("https://penny-fyt-123.firebaseio.com/");
 
 	    // Create references to store tweets and users
-	var dataTweets = ref.child('posts');
+	var dataPosts = ref.child('posts');
 	var dataUsers = ref.child('users'); 
 	   	// Create a firebaseArray of your tweets, and store this as part of $scope
 
