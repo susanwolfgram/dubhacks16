@@ -114,7 +114,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 		$scope.posts.$save(post); 
 	}
 
-	function addOneDollar() {
+	$scope.addOneDollar = function() {
 		currentUser.credit += 100; 
 		usersArr.$save(currentUser); 
 	}
