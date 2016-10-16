@@ -20,7 +20,7 @@
 		<script src="https://cdn.firebase.com/libs/angularfire/2.0.2/angularfire.min.js"></script>
 		
 		<!-- Scripts -->
-		<link href="penny.css" rel="stylesheet" type="text/css" />
+		<link href="penny1.css" rel="stylesheet" type="text/css" />
 		<script type="text/javascript" src="penny.js"></script>
 
 <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase.js"></script>
