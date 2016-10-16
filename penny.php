@@ -39,6 +39,7 @@
 	};
 	firebase.initializeApp(config);
 </script>
+<?php $count = 0; ?> 
 <!-- <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-auth.js"></script> -->
 
@@ -92,6 +93,7 @@
 		<div class="posts" ng-show="handle">
 		    <ul >
 		      <li ng-repeat="post in posts" class="mt4 br3 ba b--orange pa0 bg-white w-80 ml6">
+		      <?php $count++; ?> 
 		       <!-- | orderBy : 'cents' : true -->
 				<div class="dib w3 tc">
 					<!-- Profile pic -->
@@ -114,9 +116,9 @@
 						<textarea ng-model="comment" placeholder="Leave your two cents..." class="form-control w-90" rows="1"></textarea>
 						<button ng-click="addComment(post, comment)" class="mt0 fr cf postComment br3 f4 pa2 ph3 bg-orange">Post</button>
 					</div>
-					<p ng-show="post.comments != 0" class="tc orange f4 center"><a href="" ng-click="displayComments(post)" class="orange hoverNone">Show all comments</a></p>
+					<p ng-show="post.comments != 0" class="tc orange f4 center"><a href="" ng-click="displayComments(post," + <?php $count ?> + ")" class="orange hoverNone">Show all comments</a></p>
 		       
-	           <div id="comments" ng-show="yesComments">
+	           <div id="comments" ng-show="yesComments" + <?php $count ?>>
 		        	<div ng-repeat="comment in commentArr" class="writeComment w-90 center pa3 pl4 br3 ba b--black-70 f3 mb2">
 						<p class="worksans black-70">{{comment.user}}</p>
 						<p class="black-50 f4">{{comment.comment}}</p>
