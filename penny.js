@@ -147,6 +147,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
             });
         });
     $scope.fileName = true; 
+    $scope.$digest();
     }
 
 	$scope.addPost = function() {
