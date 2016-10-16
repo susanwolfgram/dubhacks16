@@ -22,7 +22,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	// 	});
 	// }
 	
-	$scope.load = function () {
+	$scope.load = (function () {
         if (getCookie("user") != "") {
         	user = getCookie("user"); 
         	$scope.userEmail = $scope.email; 
@@ -32,11 +32,10 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 			$scope.handle = true; 
 			ref = firebase.database().ref().child("posts");
 	     	$scope.$digest();
-	     	$scope.credits = userObj.credit; 
-	     	console.log(userObj.credit);
+	     	//$scope.credits = userObj.credit; 
+	     	//console.log(userObj.credit);
         }
-    }
-    $scope.load.then(function() {
+    }).then(function() {
 		$scope.credits = userObj.credit; 
      	console.log(userObj.credit);
     });
