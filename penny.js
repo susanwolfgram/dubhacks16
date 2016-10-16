@@ -168,7 +168,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 		$scope.posts.$add({
 			user: userObj.handle, 
 			userImage: userObj.image,
-		  	text: $scope.newPostText,
+		  	text: $scope.newPostText ? $scope.newPostText : "",
 		  	cents: 0,
 			image: imgUrl? imgUrl : "",
 		  	time: firebase.database.ServerValue.TIMESTAMP,

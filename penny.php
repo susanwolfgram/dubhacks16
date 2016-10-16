@@ -91,7 +91,8 @@
 		<!-- Posts -->
 		<div class="posts" ng-show="handle">
 		    <ul >
-		      <li ng-repeat="post in posts | orderBy : 'cents' : true" class="ml5 mt4 br3 ba b--red">
+		      <li ng-repeat="post in posts" class="ml5 mt4 br3 ba b--red">
+		       <!-- | orderBy : 'cents' : true -->
 				<div class="dib w3 tc">
 					<!-- Profile pic -->
 					<img src="{{post.userImage}}" alt="user image" class="postAvatar br-100 mw4 ba b--red db" />
@@ -112,7 +113,7 @@
 		        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" width="500px"  />
 		        <br />
 		        <h3 ng-show="post.comments != 0" ng-click="displayComments(post)">Open Comments</h3>
-		        <div id="comments" ng-show="this.yesComments" >
+		        <div id="comments" ng-show="yesComments" >
 		        	<hr />
 		        	<p ng-repeat="comment in commentArr">{{comment.comment}} <span class="commenter">-{{comment.user}}</span></p><hr /> 
 		        </div>
