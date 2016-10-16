@@ -107,21 +107,21 @@
 		        <p>{{post.text}} {{post.cents}} cents</p>
 		        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" width="500px"  />
 		        
-		        <div class="writeComment ma3 pa4 br3 ba b--orange f3">
+		        	<div class="writeComment ma3 pa4 br3 ba b--orange f3">
 						<p class="worksans orange">Write a comment:</p>
 						<textarea ng-model="comment" placeholder="Leave your two cents..." class="form-control w-90" rows="1"></textarea>
 						<button ng-click="addComment(post, comment)" class="mt0 fr cf postComment br3 f4 pa2 ph3 bg-orange">Post</button>
 					</div>
 		        <button ng-click="displayComments(post)">Show all comments</button>
-		           <div id="comments" ng-show="yesComments" >
-			        	<p ng-repeat="comment in commentArr"></p>
-			        	<div class="writeComment w-90 center pa3 pl4 br3 ba b--black-70 f3">
-							<p class="worksans black-70">{{comment.user}}</p>
-							<p class="black-50 f4">{{comment.comment}}</p>
-						</div>
+	           <div id="comments" ng-show="yesComments" >
+		        	<p ng-repeat="comment in commentArr"></p>
+		        	<div class="writeComment w-90 center pa3 pl4 br3 ba b--black-70 f3">
+						<p class="worksans black-70">{{comment.user}}</p>
+						<p class="black-50 f4">{{comment.comment}}</p>
 					</div>
-
 				</div>
+
+			
 		        <!-- <input ng-model="comment"/> -->
 		        <!-- <button ng-click="addComment(post, comment)">Add 2 cents</button> -->
 		        <!-- <button ng-click="likePost(post)">+1 cent</button> -->
