@@ -83,7 +83,7 @@
 
 
 	    <!-- Add Post  -->
-	    <div class="invis">
+	    <div class="invis" ng-show="handle">
 	    	<div class="post-circles">
 				<div class="b-circle"></div>
 			</div>
