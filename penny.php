@@ -74,7 +74,7 @@
 	    <div id="addPost" ng-show="handle">
 				<!-- <div class="post"> -->
 			    <form ng-submit="addPost()" ng-show="handle">
-			      <textarea ng-model="newPostText" placeholder="Compose a post..."></textarea>
+			      <textarea ng-model="newPostText" placeholder="Compose a post..." rows="4" cols="30"></textarea>
 			      <div class="top">
 			        <input type="file" onchange="angular.element(this).scope().previewFile()" style="float:left;" />
 			        <img ng-show="fileName" src="" id="preview" height="200px" width="200px" alt="Image preview..." style="float:right">
