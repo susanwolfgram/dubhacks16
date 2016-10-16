@@ -26,7 +26,6 @@
 		<link href="penny1.css" rel="stylesheet" type="text/css" />
 		<script type="text/javascript" src="penny.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		
 
 <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase.js"></script>
 <script>
