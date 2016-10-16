@@ -98,7 +98,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	        });
 	    });
 	}
-}
+});
 
 
 	
