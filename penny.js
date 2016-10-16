@@ -76,17 +76,6 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	    }
 	    return "";
 	}
-	// function checkCookie() {
-	//     var username = getCookie("user");
-	//     if (username!="") {
-	//         alert("Welcome again " + username);
-	//     } else {
-	//         username = prompt("Please enter your name:", "");
-	//         if (username != "" && username != null) {
-	//             setCookie("username", username, 1);
-	//         }
-	//     }
-	// }
 	
 	$scope.signIn = function() {
 		firebase.auth().signInWithEmailAndPassword($scope.email, $scope.password).then(function(firebaseUser) {
@@ -213,12 +202,9 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	}
 
 	$scope.addOneDollar = function() {
-		
 		userObj.credit += 100; 
-		
 		userObj.$save(); 
-
-		myTimer(); 
+		//myTimer(); 
 	}
 
 	function addOneDollar() {
