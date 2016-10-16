@@ -88,7 +88,7 @@
 		<div id="posts" ng-show="handle">
 		    <ul >
 		      <li ng-repeat="post in posts | orderBy : 'cents' : true">
-		      <div>
+		
 		        <i class="material-icons">account_circle</i>
 		        <p>{{post.text}}</p>
 		        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" height="200px" width="200px"  />
@@ -104,10 +104,10 @@
 		        <!-- delete a message -->
 		        <button ng-click="posts.$remove(post)">Delete Post</button>
 		     
-		      </div>
+		    
 		      </li>
 		    </ul>
-		    </div>
+		</div>
 		 
 	    
 
