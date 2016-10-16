@@ -3,6 +3,9 @@ var app = angular.module("myApp", ["firebase"]);
 app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $firebaseAuth) {
 	var user; 
 	$scope.handle = false; 
+	var currentUser; 
+	var usersFB = firebase.database().ref().child("users"); 
+	var usersArr = $firebaseArray(usersFB); 
 	//var userEmail; 
 	// $scope.addUser = function() {
 	// 	firebase.auth().createUserWithEmailAndPassword($scope.email, $scope.password).then(function(firebaseUser) {
@@ -21,7 +24,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
      	console.log("Signed in as:", firebaseUser.uid);
      	user = firebaseUser.uid; 
      	$scope.userEmail = $scope.email; 
-     	var currentUser = firebase.database().ref().child("users").child(user);
+     	currentUser = firebase.database().ref().child("users").child(user);
 		userObj = $firebaseObject(currentUser);
 		console.log(userObj);
 		$scope.handle = true; 
@@ -109,6 +112,11 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	$scope.likePost = function(post) {
 		post.cents++;
 		$scope.posts.$save(post); 
+	}
+
+	function addOneDollar() {
+		currentUser.credit += 100; 
+		usersArr.$save(currentUser); 
 	}
 
 });
