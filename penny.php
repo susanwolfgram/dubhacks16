@@ -45,7 +45,8 @@
 	<header>
 		<div class="head-circle"></div>
 	</header>
-	<?php require_once('./config.php'); ?>
+		<!-- Add Money -->
+		<?php require_once('./config.php'); ?>
 		<form action="charge.php" method="post" ng-show="handle">
 		  <button ng-click="addOneDollar()"> <!-- not sure how to add one dollar after success --> 
 		  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -57,29 +58,35 @@
 		  </button>
 		</form>
 		<!-- <button ng-click="addOneDollar()">Test Add One Dollar</button> -->
+
+
+		<!-- sign in -->
 		<form ng-submit="signIn()" ng-show="!handle" >
 			<input type="text" ng-model="email"/>
 			<input type="text" ng-model="password"/>
 			<button type="submit">Sign In</button>
 		</form>
-		 <!-- <input type="text" ng-model="data.text"/> -->
-    	<!-- all changes from our Firebase database magically appear here! -->
-    	<!-- <h1>You said: {{ data.text }}</h1> -->
-
-	    <ul ng-show="handle">
-	      <li ng-repeat="post in posts | orderBy : 'cents' : true">
-	        <!-- edit a message -->
-	        <!-- <input ng-model="post.text" ng-change="posts.$save(post)" /> -->
-	        <p>{{post.text}}</p>
-	        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" height="200px" width="200px"  />
-	        <br />
-	        <input ng-model="comment"/>
-	        <button ng-click="addComment(post, comment)">Add 2 cents</button>
-	        <button ng-click="likePost(post)">+1 cent</button>
-	        <!-- delete a message -->
-	        <button ng-click="posts.$remove(post)">Delete Post</button>
-	      </li>
-	    </ul>
+	
+		<!-- Posts -->
+		<div class="invis" ng-show="handle">
+		<section class="whatever">
+		    <ul ng-show="handle">
+		      <li ng-repeat="post in posts | orderBy : 'cents' : true">
+		      <div class="whatever">
+		        <!-- edit a message -->
+		        <!-- <input ng-model="post.text" ng-change="posts.$save(post)" /> -->
+		        <p>{{post.text}}</p>
+		        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" height="200px" width="200px"  />
+		        <br />
+		        <input ng-model="comment"/>
+		        <button ng-click="addComment(post, comment)">Add 2 cents</button>
+		        <button ng-click="likePost(post)">+1 cent</button>
+		        <!-- delete a message -->
+		        <button ng-click="posts.$remove(post)">Delete Post</button>
+		      </div></li>
+		    </ul>
+		    </section>
+	    </div>
 
 
 	    <!-- Add Post  -->
