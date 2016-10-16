@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif !important;
     -webkit-font-smoothing: antialiased !important;
     -moz-osx-font-smoothing: grayscale !important;
     text-rendering: geometricPrecision !important;
@@ -17,8 +17,19 @@ body {
     overflow: scroll;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, .worksans {
   font-family: 'Work Sans', sans-serif;
+}
+
+textarea {
+  border: none !important;
+    overflow: auto !important;
+    outline: none !important;
+    padding: 0 !important;
+
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
 }
 
 nav {
@@ -52,7 +63,7 @@ ul {
 }
 
 .buttons {
-  margin-left: -3.9rem;
+  margin-left: -1.9rem;
   margin-top: 1.3rem;
 }
 
@@ -80,13 +91,33 @@ ul {
 }
 
 .postAvatar {
-  margin-left: -6rem;
-  margin-top: -2.5rem;
+  margin-left: -4.3rem;
+  margin-top: -1.5rem;
 
 }
 
 .name {
-  background: #D7855F
+  background: #D7855F;
+  min-width: 100%;
+}
+
+.commentSection {
+  background: rgba(216,100,46,0.18);
+}
+
+.postComment {
+  margin-top: -1.5rem;
+  margin-right: -1rem;
+
+  color: white;
+  border: none;
+}
+
+.writeComment {
+/*background: rgba(216,100,46,0.18);
+border: 1px solid #D8642F;*/
+
+background: white;
 }
 
 .md-button {
