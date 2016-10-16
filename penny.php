@@ -41,7 +41,7 @@
 	</head>
 
 	<!-- Initiate app and controller on body -->
-	<body ng-app="myApp" ng-controller="myCtrl">
+	<body ng-app="myApp" ng-controller="myCtrl" ng-init="load()">
 	<?php require_once('./config.php'); ?>
 		<form action="charge.php" method="post">
 		  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"

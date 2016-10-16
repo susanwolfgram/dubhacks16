@@ -19,6 +19,9 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	// 	});
 	// }
 	var userObj;
+	$scope.load = function () {
+        alert("load event detected!");
+    }
 	$scope.signIn = function() {
 		firebase.auth().signInWithEmailAndPassword($scope.email, $scope.password).then(function(firebaseUser) {
      	console.log("Signed in as:", firebaseUser.uid);
