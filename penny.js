@@ -1,6 +1,6 @@
 var app = angular.module("myApp", ["firebase"]);
 
-app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $firebaseAuth) {
+app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $firebaseAuth, $interval) {
 	var user; 
 	$scope.handle = false; 
 	$scope.fileName = false; 
@@ -8,7 +8,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	var usersFB = firebase.database().ref().child("users"); 
 	var usersArr = $firebaseArray(usersFB); 
 	var userObj;
-
+	$scope.userName = false; 
 	//var userEmail; 
 	// $scope.addUser = function() {
 	// 	firebase.auth().createUserWithEmailAndPassword($scope.email, $scope.password).then(function(firebaseUser) {
@@ -21,6 +21,18 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	// 	  var errorMessage = error.message;
 	// 	});
 	// }
+	var setVariables;
+
+
+	function myTimer() {
+		console.log('hello from the timer');
+
+	    $scope.credits = userObj.credit;
+	    $scope.userName = userObj.handle; 
+	    $scope.$digest();
+	}
+
+	$interval(myTimer, 1000);
 	
 	$scope.load = function () {
         if (getCookie("user") != "") {
@@ -32,6 +44,12 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 			$scope.handle = true; 
 			ref = firebase.database().ref().child("posts");
 	     	$scope.$digest();
+	     	$scope.credits = userObj.credit; //not registering... need async function
+	     	console.log(userObj.credit);
+	     	
+
+	     	//setVariables = setInterval(myTimer, 1000);
+	     	// console.log(myVar);
         }
     }
 
@@ -73,6 +91,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	//         }
 	//     }
 	// }
+	
 	$scope.signIn = function() {
 		firebase.auth().signInWithEmailAndPassword($scope.email, $scope.password).then(function(firebaseUser) {
      	console.log("Signed in as:", firebaseUser.uid);
@@ -84,12 +103,19 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 		$scope.handle = true; 
 		setCookie("user", user); 
      	$scope.$digest();
+     	$scope.credits = userObj.credit; 
+     	console.log(userObj.credit);
+     	//setVariables = setInterval(myTimer, 1000);
+
+
    	}).catch(function(error) {
 		  // Handle Errors here.
 		  var errorCode = error.code;
 		  var errorMessage = error.message;
 		});
 	}
+
+	
 
 	$scope.signOut = function() {
 		firebase.auth().signOut().then(function() {
@@ -98,6 +124,8 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 			setCookie("user", "");
 			$scope.handle = false; 
 			$scope.$digest();
+			$interval.cancel();
+			//clearInterval(myVar);
 		  // Sign-out successful.
 		}, function(error) {
 		  // An error happened.
@@ -179,7 +207,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	$scope.yesComments = false; 
 	$scope.displayComments = function(post) {
 		$scope.yesComments = !$scope.yesComments; 
-		$scope.commentArr = $firebaseArray(post.comments);
+		$scope.commentArr = post.comments;
 	}
 
 	$scope.likePost = function(post) {
