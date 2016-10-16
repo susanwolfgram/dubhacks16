@@ -21,7 +21,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	// 	  var errorMessage = error.message;
 	// 	});
 	// }
-	var myVar;
+	var setVariables;
 	
 	$scope.load = function () {
         if (getCookie("user") != "") {
@@ -35,8 +35,8 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	     	$scope.$digest();
 	     	$scope.credits = userObj.credit; //not registering... need async function
 	     	console.log(userObj.credit);
-	     	myVar = setInterval(myTimer, 1000);
-	     	console.log(myVar);
+	     	setVariables = setInterval(myTimer, 1000);
+	     	// console.log(myVar);
         }
     }
 
@@ -92,7 +92,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
      	$scope.$digest();
      	$scope.credits = userObj.credit; 
      	console.log(userObj.credit);
-     	myVar = setInterval(myTimer, 1000);
+     	setVariables = setInterval(myTimer, 1000);
 
 
    	}).catch(function(error) {
