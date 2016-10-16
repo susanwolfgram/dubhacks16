@@ -67,7 +67,7 @@
 		<form action="charge.php" method="post" ng-show="handle">
 		  <button ng-click="addOneDollar()"> <!-- not sure how to add one dollar after success --> 
 		  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-		          data-key="<?php echo $stripe['publishable_key']; ?>"
+		          data-key="pk_test_6TxN5xUdWFAeyDLbeHyoPJ6Q"
 		          data-description="Access for a year"
 		          data-amount="100"
 		          data-locale="auto">  	
