@@ -42,6 +42,7 @@
 
 	<!-- Initiate app and controller on body -->
 	<body ng-app="myApp" ng-controller="myCtrl" ng-init="load()">
+	<div class="container">
 	<header>
 		<div class="head-circle"></div>
 	</header>
@@ -127,6 +128,7 @@
 
 	    
     	<button ng-click="signOut()" ng-show="handle">Sign Out</button>
+    	</div>
 	</body>
 </html>
 
