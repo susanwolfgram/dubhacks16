@@ -101,7 +101,7 @@
 					 {{post.cents}} cents
 		       </div>
 
-				<div class="postContent dib v-top">
+				<div class="postContent dib v-top pl3 w-90">
 				<div class="name mt0 w-100 db">
 		        	<h1 class="name mt0 white">{{post.user}}</h1>
 	        	</div>
