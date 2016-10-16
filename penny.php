@@ -97,7 +97,7 @@
 		        <p>{{post.text}}</p>
 		        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" width="500px"  />
 		        <br />
-		        <button ng-click="displayComments(post)">Open Comments</button>
+		        <h2 ng-click="displayComments(post)">Open Comments</h2>
 		        <div id="comments" ng-show="yesComments" >
 		        	<p ng-repeat="comment in commentArr">{{comment.comment}}</p>
 		        </div>
