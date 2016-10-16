@@ -21,6 +21,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
      	$scope.userEmail = $scope.email; 
      	var users = firebase.database().ref().child("users");
 		var userArr = $firebaseArray(users);
+		console.log(userArr);
 		var currentUser = userArr.$getRecord(user);
 		console.log(currentUser.handle);
      	$scope.$digest();
