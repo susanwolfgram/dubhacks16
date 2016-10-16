@@ -200,7 +200,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 		var tarea = document.querySelectorAll(".addComm");
 		var i;
 		for (i = 0; i < tarea.length; i++) {
-		    tarea[i].innerHTML = "";
+		    tarea[i].value = " ";
 		}
 	}
 
