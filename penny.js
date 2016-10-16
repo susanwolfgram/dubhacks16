@@ -68,7 +68,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	    var metadata = {
 	    	contentType: 'image/jpeg'
 	};
-}
+
 var uploadTask = storageRef.child('images/' + file.name).put(file, metadata);
 	uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
 	function(snapshot) {
@@ -96,6 +96,7 @@ var uploadTask = storageRef.child('images/' + file.name).put(file, metadata);
 	        });
 	    });
 	}
+}
 
 	
 
