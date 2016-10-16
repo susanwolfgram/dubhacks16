@@ -46,6 +46,7 @@
 	<header>
 		<div class="head-circle"></div>
 	</header>
+	
 		<!-- Add Money -->
 		<?php require_once('./config.php'); ?>
 		<form action="charge.php" method="post" ng-show="handle">
