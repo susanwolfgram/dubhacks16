@@ -111,8 +111,8 @@
 		        <p>{{post.text}} {{post.cents}} cents</p>
 		        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" width="500px"  />
 		        <br />
-		        <h3 ng-show="post.comments != 0" ng-click="displayComments(post)">Open Comments</h3>
-		        <div id="comments" ng-show="yesComments" >
+		        <h3 ng-show="post.comments != 0" ng-click="displayComments(post); listClicked? listClicked = false : listClicked = true"">Open Comments</h3>
+		        <div id="comments" ng-show="listClicked" >
 		        	<hr />
 		        	<p ng-repeat="comment in commentArr">{{comment.comment}} <span class="commenter">-{{comment.user}}</span></p><hr /> 
 		        </div>
