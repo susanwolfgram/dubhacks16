@@ -101,7 +101,7 @@
 
 					<!-- <img src="icons/like.svg" alt="Like" class="db buttons" /> -->
 					<!-- Save -->
-					<div class="save buttons"></div>
+					<!-- <div class="save buttons"></div> -->
 		       <!--  <h1><img src="{{post.userImage}}" alt="user image" height="50px" style="border-radius: 20px;" />{{post.user}}</h1> -->
 		       </div>
 
@@ -127,7 +127,7 @@
 		        <button ng-click="likePost(post)">+1 cent</button>
 		        <!-- delete a message -->
 		        <button ng-show="post.user == userName" ng-click="posts.$remove(post)">Delete Post</button>
-		     
+		     </div>
 		    
 		      </li>
 		    </ul>
