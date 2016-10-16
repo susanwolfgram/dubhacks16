@@ -16,7 +16,7 @@
   echo('<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script type="text/javascript">');
   include_once('penny.js'); 
-  echo('addOneDollar()');
+  echo('addOneDollar();');
   echo('</script>'); 
 ?>
 
