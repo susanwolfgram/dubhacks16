@@ -9,6 +9,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	var usersArr = $firebaseArray(usersFB); 
 	var userObj;
 	$scope.userName = false; 
+	$scope.listClicked = false; 
 	//var userEmail; 
 	// $scope.addUser = function() {
 	// 	firebase.auth().createUserWithEmailAndPassword($scope.email, $scope.password).then(function(firebaseUser) {
