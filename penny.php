@@ -114,10 +114,11 @@
 					</div>
 		        <button ng-click="displayComments(post)">Show all comments</button>
 		           <div id="comments" ng-show="yesComments" >
-			        	<p ng-repeat="comment in commentArr">{{comment.comment}}</p>
+			        	<p ng-repeat="comment in commentArr"></p>
 			        	<div class="writeComment w-90 center pa3 pl4 br3 ba b--black-70 f3">
-						<p class="worksans black-70">commenter name here</p>
-						<p class="black-50 f4">comment</p>
+							<p class="worksans black-70">{{comment.user}}</p>
+							<p class="black-50 f4">{{comment.comment}}</p>
+						</div>
 					</div>
 
 				</div>
