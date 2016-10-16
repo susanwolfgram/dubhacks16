@@ -120,6 +120,12 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 		userObj.$save(); 
 	}
 
+	function addOneDollar() {
+		console.log(userObj);
+		userObj.credit += 100; 
+		userObj.$save(); 
+	}
+
 });
 
 
