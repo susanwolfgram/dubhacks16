@@ -32,7 +32,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	    $scope.$digest();
 	}
 
-	$interval(myTimer, 1000);
+	$interval(myTimer, 1000, 5);
 	
 	$scope.load = function () {
         if (getCookie("user") != "") {
@@ -46,10 +46,6 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	     	$scope.$digest();
 	     	$scope.credits = userObj.credit; //not registering... need async function
 	     	console.log(userObj.credit);
-	     	
-
-	     	//setVariables = setInterval(myTimer, 1000);
-	     	// console.log(myVar);
         }
     }
 
