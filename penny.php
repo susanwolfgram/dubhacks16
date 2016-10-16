@@ -47,6 +47,7 @@
 	<div class="container">
 		<header>
 			<div class="head-circle"></div>
+			<button class="md-button" ng-click="signOut()" ng-show="handle" style="float: right;">Sign Out</button>
 		</header>
 
 		<!-- Add Money -->
@@ -112,12 +113,7 @@
 		</div>
 		 
 	    
-
-
-	    
-
-	    
-    	<button class="md-button" ng-click="signOut()" ng-show="handle">Sign Out</button>
+    	
     	</div>
     
 	</body>
