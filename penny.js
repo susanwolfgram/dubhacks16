@@ -167,6 +167,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 
 	$scope.addPost = function() {
 		$scope.posts.$add({
+			showComments: false, 
 			user: userObj.handle, 
 			userImage: userObj.image,
 		  	text: $scope.newPostText ? $scope.newPostText : "",
@@ -206,8 +207,8 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	//$scope.yesComments = false; 
 
 	$scope.displayComments = function(post) {
-		$scope.yesComments = !$scope.yesComments; 
-		$scope.commentArr = post.comments;
+		//$scope.yesComments = !$scope.yesComments; 
+		post.showComments = !post.showComments; 
 		$scope.$digest();
 	}
 
