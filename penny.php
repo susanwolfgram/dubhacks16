@@ -70,40 +70,25 @@
 		</form>
 
 		<!-- Add Post  -->
-	    <div class="invis" ng-show="handle">
-	    	<div class="post-circles">
-				<div class="b-circle"></div>
-			</div>
-			<section class="whatever">
-				<div class="post">
+	    <div ng-show="handle">
+				<!-- <div class="post"> -->
 			    <form ng-submit="addPost()" ng-show="handle">
 			      <input ng-model="newPostText" />
 			      <div class="top">
 			        <input type="file" onchange="angular.element(this).scope().previewFile()" style="float:left;">
 			        <img src="" id="preview" height="200px" width="200px" alt="Image preview..." style="float:right">
 			        <!-- <button ng-click="addImage()">Add Post</button> -->
-		    	</div>
+		    	<!-- </div> -->
 			      <button type="submit">Add Post</button>
 			    </form>
 			    </div>
-			</section>
 	    </div>
 	
 		<!-- Posts -->
-		<div class="invis" ng-show="handle">
-			<section class="whatever">
-				<!-- <div class="post" ng-repeat="post in posts | orderBy : 'cents' : true">
-					<h1>USER</h1>
-					<p>{{post.text}}</p>
-				
-				<div class="writeComment">
-					<p>Write a comment:</p>
-					<textarea ng-model="comment" placeholder="Type something..."></textarea>
-					<button ng-click="addComment(post, comment)">Add 2 cents</button>
-				</div> -->
-		    <ul ng-show="handle">
+		<div ng-show="handle">
+		    <ul >
 		      <li ng-repeat="post in posts | orderBy : 'cents' : true">
-		      <div class="whatever">
+		      <div>
 		        <i class="material-icons">account_circle</i>
 		        <p>{{post.text}}</p>
 		        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" height="200px" width="200px"  />
@@ -118,10 +103,12 @@
 		        <button ng-click="likePost(post)">+1 cent</button>
 		        <!-- delete a message -->
 		        <button ng-click="posts.$remove(post)">Delete Post</button>
-		        </div>
-		      </div></li>
+		     
+		      </div>
+		      </li>
 		    </ul>
-		    </section>
+		    </div>
+		 
 	    
 
 
