@@ -96,8 +96,16 @@
 		    <ul >
 		      <li ng-repeat="post in posts | orderBy : 'cents' : true" class="ml5 mt4 br3 ba b--red">
 		
-				<div class="dib buttons mr4">
-					<img src="{{post.userImage}}" alt="user image" class="postAvatar br-100 mw4 ba b--red" />
+				<div class="dib w3 tc">
+					<!-- Profile pic -->
+					<img src="{{post.userImage}}" alt="user image" class="postAvatar br-100 mw4 ba b--red db" />
+					<!-- Like -->
+					<div class="like buttons"></div>
+
+					<!-- <img src="icons/like.svg" alt="Like" class="db buttons" /> -->
+					<!-- Save -->
+					<div class="save buttons"></div>
+					<!-- <img src="icons/save.png" alt="Like" class="db buttons" /> -->
 				</div>
 
 				<div class="postContent dib v-top">

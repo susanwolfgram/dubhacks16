@@ -51,8 +51,36 @@ ul {
 	padding: 0;
 }
 
+.buttons {
+  margin-left: -3.9rem;
+  margin-top: 1.3rem;
+}
+
+.like {
+  background-image: url("icons/like.svg");
+  background-repeat: no-repeat;
+  height: 4rem;
+  width: 4rem; 
+}
+
+.like:hover {
+  background-image: url("icons/like_active.svg");
+}
+
+.save {
+  background-image: url("icons/save.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 4rem;
+  width: 4rem; 
+}
+
+.save:hover {
+  background-image: url("icons/save_active.png");
+}
+
 .postAvatar {
-  margin-left: -5.7rem;
+  margin-left: -6rem;
   margin-top: -2.5rem;
 
 }
