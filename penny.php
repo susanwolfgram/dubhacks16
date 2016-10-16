@@ -109,12 +109,12 @@
 				<div class="name mt0 w-100 db">
 		        	<h1 class="name mt0 white">{{post.user}}</h1>
 	        	</div>
-		        <p>{{post.text}}</p>
+		        <p>{{post.text}} {{post.cents}} cents</p>
 		        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" width="500px"  />
 		        <br />
 		        <h3 ng-click="displayComments(post)">Open Comments</h3>
 		        <div id="comments" ng-show="yesComments" >
-		        	<p ng-repeat="comment in commentArr">{{comment.comment}} <span class="commenter">-{{comment.user}}</span></p>
+		        	<p ng-repeat="comment in commentArr">{{comment.comment}} <span class="commenter">-{{comment.user}}</span></p><hr /> 
 		        </div>
 		        <div class="writeComment">
 					<p>Write a comment:</p>
