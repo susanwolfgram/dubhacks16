@@ -1,7 +1,7 @@
 var app = angular.module("myApp", ["firebase"]);
 
 app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $firebaseAuth) {
-	var user = false; 
+	$scope.user = false; 
 	//var userEmail; 
 	// $scope.addUser = function() {
 	// 	firebase.auth().createUserWithEmailAndPassword($scope.email, $scope.password).then(function(firebaseUser) {
@@ -18,7 +18,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	$scope.signIn = function() {
 		firebase.auth().signInWithEmailAndPassword($scope.email, $scope.password).then(function(firebaseUser) {
      	console.log("Signed in as:", firebaseUser.uid);
-     	user = firebaseUser.uid; 
+     	$scope.user = firebaseUser.uid; 
      	$scope.userEmail = $scope.email; 
      	var currentUser = firebase.database().ref().child("users").child(user);
 		userObj = $firebaseObject(currentUser);
