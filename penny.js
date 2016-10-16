@@ -20,8 +20,48 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	// }
 	var userObj;
 	$scope.load = function () {
-        alert("load event detected!");
+        if (getCookie("user") != "") {
+        	user = getCookie("user"); 
+        	$scope.userEmail = $scope.email; 
+	     	currentUser = firebase.database().ref().child("users").child(user);
+			userObj = $firebaseObject(currentUser);
+			console.log(userObj);
+			$scope.handle = true; 
+	     	$scope.$digest();
+        }
     }
+    
+    function setCookie(cname, cvalue, exdays) {
+	    var d = new Date();
+	    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+	    var expires = "expires="+ d.toUTCString();
+	    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+	}
+	function getCookie(cname) {
+	    var name = cname + "=";
+	    var ca = document.cookie.split(';');
+	    for(var i = 0; i <ca.length; i++) {
+	        var c = ca[i];
+	        while (c.charAt(0)==' ') {
+	            c = c.substring(1);
+	        }
+	        if (c.indexOf(name) == 0) {
+	            return c.substring(name.length,c.length);
+	        }
+	    }
+	    return "";
+	}
+	function checkCookie() {
+	    var username = getCookie("user");
+	    if (username!="") {
+	        alert("Welcome again " + username);
+	    } else {
+	        username = prompt("Please enter your name:", "");
+	        if (username != "" && username != null) {
+	            setCookie("username", username, 1);
+	        }
+	    }
+	}
 	$scope.signIn = function() {
 		firebase.auth().signInWithEmailAndPassword($scope.email, $scope.password).then(function(firebaseUser) {
      	console.log("Signed in as:", firebaseUser.uid);
@@ -31,6 +71,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 		userObj = $firebaseObject(currentUser);
 		console.log(userObj);
 		$scope.handle = true; 
+		setCookie("user", user, 1); 
 		//console.log(userObj["handle"]);
 		// var currentUser = userArr.$indexFor("" + user);
 		// console.log(userArr[currentUser]);
