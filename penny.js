@@ -78,7 +78,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 		  	text: $scope.newPostText,
 		  	cents: 0,
 			image: imgUrl? imgUrl : "",
-		  	time: firebase.database.ServerValue.TIMESTAMP,
+		  	time: new Date(firebase.database.ServerValue.TIMESTAMP),
 		  	comments: 0
 		});
 	};
