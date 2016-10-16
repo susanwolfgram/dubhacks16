@@ -45,10 +45,18 @@
 	<!-- Initiate app and controller on body -->
 	<body ng-app="myApp" ng-controller="myCtrl" ng-init="load()">
 	<div class="container">
-		<header>
+		<nav>
 			<button class="md-button" ng-click="signOut()" ng-show="handle">Sign Out</button>
 			<div class="head-circle" style="float: left;"></div>	
-		</header>
+			 <div class="dropdown">
+  				<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example</button>
+ 				 <ul class="dropdown-menu">
+				    <li><a href="#">HTML</a></li>
+				    <li><a href="#">CSS</a></li>
+				    <li><a href="#">JavaScript</a></li>
+  				</ul>
+			</div>
+		</nav>
 
 		<!-- Add Money -->
 		<?php require_once('./config.php'); ?>
