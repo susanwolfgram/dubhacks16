@@ -107,7 +107,8 @@
 	        	</div>
 		        <p>{{post.text}}</p>
 		        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" width="500px"  />
-		        
+		        </div>
+		           <div class="commentSection pb2 pt2">
 		        	<div class="writeComment ma3 pa4 br3 ba b--orange f3">
 						<p class="worksans orange">Write a comment:</p>
 						<textarea ng-model="comment" placeholder="Leave your two cents..." class="form-control w-90" rows="1"></textarea>
