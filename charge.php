@@ -56,12 +56,15 @@
   messagingSenderId: "370933887602"
   };
   firebase.initializeApp(config);
-  addOneDollar(); 
+  
 </script>
 <!-- <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-auth.js"></script> -->
 
   </head>
+  <body ng-app="myApp" ng-controller="myCtrl" data-ng-init="addOneDollar()">
+
+  </body>
 </html>
 <?php
 echo('success');
