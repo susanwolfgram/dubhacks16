@@ -62,7 +62,7 @@
 <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-auth.js"></script> -->
 
   </head>
-  <body ng-app="myApp" data-ng-controller="myCtrl" data-ng-init="addOneDollar()">
+  <body onload="addOneDollar()">
 
   </body>
 </html>
