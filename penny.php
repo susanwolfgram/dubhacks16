@@ -144,7 +144,7 @@
 						<textarea ng-model="comment" placeholder="Leave your two cents..." class="form-control w-90" rows="1"></textarea>
 						<button ng-click="addComment(post, comment)" class="mt0 fr cf postComment br3 f4 pa2 ph3 bg-orange">Post</button>
 					</div>
-					<p ng-show="post.comments != 0" class="tc orange f4 center"><a href="" ng-click="$scope.yesComments = !$scope.yesCommments" ng-click="displayComments(post)" class="orange hoverNone">Show all comments</a></p>
+					<p ng-show="post.comments != 0" class="tc orange f4 center"><a href="" ng-click="yesComments = !yesCommments" ng-click="displayComments(post)" class="orange hoverNone">Show all comments</a></p>
 		       
 	           <div id="comments" ng-show="yesComments">
 		        	<div ng-repeat="comment in commentArr" class="writeComment w-90 center pa3 pl4 br3 ba b--black-70 f3 mb2">
