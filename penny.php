@@ -70,16 +70,25 @@
 		<!-- Posts -->
 		<div class="invis" ng-show="handle">
 		<section class="whatever">
-		    <ul ng-show="handle">
+				<div class="post" ng-repeat="post in posts | orderBy : 'cents' : true">
+					<!-- <h1>Pewdiepie</h1> -->
+					<p>{{post.text}}</p>
+				</div>
+				<div class="writeComment">
+					<p>Write a comment:</p>
+					<textarea ng-model="comment" placeholder="Type something..."></textarea>
+					<button ng-click="addComment(post, comment)">Add 2 cents</button>
+				</div>
+		  <!--   <ul ng-show="handle">
 		      <li ng-repeat="post in posts | orderBy : 'cents' : true">
-		      <div class="whatever">
+		      <div class="whatever"> -->
 		        <!-- edit a message -->
 		        <!-- <input ng-model="post.text" ng-change="posts.$save(post)" /> -->
-		        <p>{{post.text}}</p>
+		       <!--  <p>{{post.text}}</p> -->
 		        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" height="200px" width="200px"  />
 		        <br />
-		        <input ng-model="comment"/>
-		        <button ng-click="addComment(post, comment)">Add 2 cents</button>
+		        <!-- <input ng-model="comment"/> -->
+		        <!-- <button ng-click="addComment(post, comment)">Add 2 cents</button> -->
 		        <button ng-click="likePost(post)">+1 cent</button>
 		        <!-- delete a message -->
 		        <button ng-click="posts.$remove(post)">Delete Post</button>
