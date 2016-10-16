@@ -120,23 +120,22 @@
 		<!-- Posts -->
 		<div class="posts" ng-show="handle">
 		    <ul >
-		      <li ng-repeat="post in posts" class="mt4 br3 ba b--orange pa0 bg-white w-80 ml6">
+		      <li ng-repeat="post in posts | orderBy : 'cents' : true" class="mt4 br3 ba b--orange pa0 bg-white w-80 ml6 posts">
 
 		       <!-- | orderBy : 'cents' : true -->
-				<div class="dib w3 tc">
+				<div class="dib w3 tc absolute">
 					<!-- Profile pic -->
-					<img src="{{post.userImage}}" alt="user image" class="postAvatar br-100 mw4 ba b--red db" />
+					<img src="{{post.userImage}}" alt="user image" class="postAvatar br-100 mw4 ba b--orange db" />
 					<!-- Like -->
-					<div title="add 1 cent" ng-click="likePost(post)" class="like buttons"></div>
-					 {{post.cents}} cents
+					<a href="" ng-click="likePost(post)"><div class="like buttons"></div></a>					 {{post.cents}} cents
 		       </div>
 
-				<div class="postContent dib v-top pl3 w-90">
-				<div class="name mt0 w-100 db">
-		        	<h1 class="name mt0 white">{{post.user}}</h1>
+				<div class="postContent dib v-top pl3 w-100">
+				<div class="name mt0 mb3 w-100 db b">
+		        	<h1 class="name mt0 mb0 white">{{post.user}}</h1>
 	        	</div>
-		        <p>{{post.text}}</p>
-		        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" width="500px"  />
+		        <p class="f3 black-70 lh-copy postpara">{{post.text}}</p>
+		        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" width="500px" class="pl5" />
 		        </div>
 		           <div class="commentSection pb2 pt2">
 		        	<div class="writeComment ma3 pa4 br3 ba b--orange f3">
