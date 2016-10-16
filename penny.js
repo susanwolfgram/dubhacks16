@@ -1,6 +1,6 @@
 var app = angular.module("myApp", ["firebase"]);
 
-app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $firebaseAuth) {
+app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $firebaseAuth, $interval) {
 	var user; 
 	$scope.handle = false; 
 	$scope.fileName = false; 
@@ -25,6 +25,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 
 	function myTimer() {
 		console.log('hello from the timer');
+
 	    $scope.credits = userObj.credit;
 	    $scope.userName = userObj.handle; 
 	    $scope.$digest();
