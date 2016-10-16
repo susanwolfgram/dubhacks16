@@ -137,7 +137,7 @@
 	        	</div>
 		        <p class="f3 black-70 lh-copy postpara">{{post.text}}</p>
 		        <!-- <p style="margin-left: 20px;"><i class="fa fa-money" aria-hidden="true"></i> {{post.cents}} cents</p> -->
-		        <div class="br-100 bg-white ba b--orange cents"><p class="f4 v-mid pv3 mb0 orange">{{post.cents}}&cent;</p>
+		        <div class="br-100 bg-white ba b--orange cents"><p class="f4 v-mid pv3 mb0 orange">{{post.cents}}&cent;</p></div>
 		        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" width="500px" class="pl5" />
 		        </div>
 		           <div class="commentSection pb2 pt2">
