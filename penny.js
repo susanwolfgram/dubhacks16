@@ -176,6 +176,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 		});
 		var form = document.getElementById("addingPost");
 		form.reset();
+		$scope.fileName = false; 
 	};
 
 	$scope.addComment = function(post, comment) {
