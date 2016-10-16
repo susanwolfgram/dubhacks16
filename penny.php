@@ -15,6 +15,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
 
 		<!-- AngularFire -->
 		<script src="https://cdn.firebase.com/libs/angularfire/2.0.2/angularfire.min.js"></script>
@@ -79,7 +80,7 @@
 			        <img src="" id="preview" height="200px" width="200px" alt="Image preview..." style="float:right">
 			        <!-- <button ng-click="addImage()">Add Post</button> -->
 		    	<!-- </div> -->
-			      <button type="submit">Add Post</button>
+			      <md-button type="submit">Add Post</md-button>
 			    </form>
 			    </div>
 	    </div>
@@ -115,7 +116,7 @@
 	    
 
 	    
-    	<button ng-click="signOut()" ng-show="handle">Sign Out</button>
+    	<md-button ng-click="signOut()" ng-show="handle">Sign Out</md-button>
     	</div>
     
 	</body>
