@@ -85,7 +85,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 
 	$scope.signOut = function() {
 		firebase.auth().signOut().then(function() {
-			document.cookie = "user=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+			document.cookie = "user=;";
 			$scope.handle = false; 
 		  // Sign-out successful.
 		}, function(error) {
