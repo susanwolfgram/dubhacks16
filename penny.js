@@ -51,17 +51,17 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	    }
 	    return "";
 	}
-	function checkCookie() {
-	    var username = getCookie("user");
-	    if (username!="") {
-	        alert("Welcome again " + username);
-	    } else {
-	        username = prompt("Please enter your name:", "");
-	        if (username != "" && username != null) {
-	            setCookie("username", username, 1);
-	        }
-	    }
-	}
+	// function checkCookie() {
+	//     var username = getCookie("user");
+	//     if (username!="") {
+	//         alert("Welcome again " + username);
+	//     } else {
+	//         username = prompt("Please enter your name:", "");
+	//         if (username != "" && username != null) {
+	//             setCookie("username", username, 1);
+	//         }
+	//     }
+	// }
 	$scope.signIn = function() {
 		firebase.auth().signInWithEmailAndPassword($scope.email, $scope.password).then(function(firebaseUser) {
      	console.log("Signed in as:", firebaseUser.uid);
@@ -72,9 +72,6 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 		console.log(userObj);
 		$scope.handle = true; 
 		setCookie("user", user, 1); 
-		//console.log(userObj["handle"]);
-		// var currentUser = userArr.$indexFor("" + user);
-		// console.log(userArr[currentUser]);
      	$scope.$digest();
    	}).catch(function(error) {
 		  // Handle Errors here.
