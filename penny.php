@@ -91,7 +91,7 @@
 		<!-- Posts -->
 		<div class="posts" ng-show="handle">
 		    <ul >
-		      <li ng-repeat="post in posts" class="ml5 mt4 br3 ba b--red">
+		      <li ng-repeat="post in posts" class="mt4 br3 ba b--orange pa0 bg-white w-80 ml6">
 		       <!-- | orderBy : 'cents' : true -->
 				<div class="dib w3 tc">
 					<!-- Profile pic -->
