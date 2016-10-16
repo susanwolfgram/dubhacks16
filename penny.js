@@ -73,8 +73,9 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
     // var commentArr = $firebaseArray(post.comments);
     // commentArr.push(comment); 
     console.log(post.comments);
+    post.comments.push(comment;)
     //post.comments += [comment]; 
-    //$scope.posts.$save(post); 
+    $scope.posts.$save(post); 
     // $scope.songs = []; 
     // var baz = new Firebase("https://penny-fyt-123.firebaseio.com/posts/" + post.$id + "/" + post.comment);      
     // var newChild = baz.push(angular.copy(comment));
