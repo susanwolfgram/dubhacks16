@@ -86,6 +86,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
             });
         });
     }
+    
 	$scope.addPost = function() {
 		$scope.posts.$add({
 			user: user, 
@@ -96,17 +97,6 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 		  	comments: 0
 		});
 	};
-	$scope.addImage = function() {
-		console.log(imgUrl);
-		$scope.posts.$add({
-			user: user, 
-		  	text: "",
-		  	cents: 0,
-		  	image: imgUrl,
-		  	// time: Firebase.ServerValue.TIMESTAMP,
-		  	comments: 0
-		});
-	}
 
 	$scope.addComment = function(post, comment) {
 		if (post.comments == 0) {
