@@ -66,6 +66,26 @@
 			<input type="text" ng-model="password"/>
 			<button type="submit">Sign In</button>
 		</form>
+
+		<!-- Add Post  -->
+	    <div class="invis" ng-show="handle">
+	    	<div class="post-circles">
+				<div class="b-circle"></div>
+			</div>
+			<section class="whatever">
+			<div class="post">
+		    <form ng-submit="addPost()" ng-show="handle">
+		      <input ng-model="newPostText" />
+		      <div class="top">
+		        <input type="file" onchange="angular.element(this).scope().previewFile()" style="float:left;">
+		        <img src="" id="preview" height="200px" width="200px" alt="Image preview..." style="float:right">
+		        <!-- <button ng-click="addImage()">Add Post</button> -->
+	    	</div>
+		      <button type="submit">Add Post</button>
+		    </form>
+		    </div>
+			</section>
+	    </div>
 	
 		<!-- Posts -->
 		<div class="invis" ng-show="handle">
@@ -99,25 +119,7 @@
 	    </div>
 
 
-	    <!-- Add Post  -->
-	    <div class="invis" ng-show="handle">
-	    	<div class="post-circles">
-				<div class="b-circle"></div>
-			</div>
-			<section class="whatever">
-			<div class="post">
-		    <form ng-submit="addPost()" ng-show="handle">
-		      <input ng-model="newPostText" />
-		      <div class="top">
-		        <input type="file" onchange="angular.element(this).scope().previewFile()" style="float:left;">
-		        <img src="" id="preview" height="200px" width="200px" alt="Image preview..." style="float:right">
-		        <!-- <button ng-click="addImage()">Add Post</button> -->
-	    	</div>
-		      <button type="submit">Add Post</button>
-		    </form>
-		    </div>
-			</section>
-	    </div>
+	    
 
 	    
     	<button ng-click="signOut()" ng-show="handle">Sign Out</button>
