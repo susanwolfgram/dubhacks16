@@ -43,10 +43,10 @@
 	<!-- Initiate app and controller on body -->
 	<body ng-app="myApp" ng-controller="myCtrl" ng-init="load()">
 	<div class="container">
-	<header>
-		<div class="head-circle"></div>
-	</header>
-	
+		<header>
+			<div class="head-circle"></div>
+		</header>
+
 		<!-- Add Money -->
 		<?php require_once('./config.php'); ?>
 		<form action="charge.php" method="post" ng-show="handle">
@@ -75,17 +75,17 @@
 				<div class="b-circle"></div>
 			</div>
 			<section class="whatever">
-			<div class="post">
-		    <form ng-submit="addPost()" ng-show="handle">
-		      <input ng-model="newPostText" />
-		      <div class="top">
-		        <input type="file" onchange="angular.element(this).scope().previewFile()" style="float:left;">
-		        <img src="" id="preview" height="200px" width="200px" alt="Image preview..." style="float:right">
-		        <!-- <button ng-click="addImage()">Add Post</button> -->
-	    	</div>
-		      <button type="submit">Add Post</button>
-		    </form>
-		    </div>
+				<div class="post">
+			    <form ng-submit="addPost()" ng-show="handle">
+			      <input ng-model="newPostText" />
+			      <div class="top">
+			        <input type="file" onchange="angular.element(this).scope().previewFile()" style="float:left;">
+			        <img src="" id="preview" height="200px" width="200px" alt="Image preview..." style="float:right">
+			        <!-- <button ng-click="addImage()">Add Post</button> -->
+		    	</div>
+			      <button type="submit">Add Post</button>
+			    </form>
+			    </div>
 			</section>
 	    </div>
 	
