@@ -21,6 +21,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	// 	  var errorMessage = error.message;
 	// 	});
 	// }
+	var myVar;
 	
 	$scope.load = function () {
         if (getCookie("user") != "") {
@@ -76,7 +77,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	//         }
 	//     }
 	// }
-	var myVar;
+	
 	$scope.signIn = function() {
 		firebase.auth().signInWithEmailAndPassword($scope.email, $scope.password).then(function(firebaseUser) {
      	console.log("Signed in as:", firebaseUser.uid);
