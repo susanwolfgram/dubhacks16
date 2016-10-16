@@ -15,6 +15,11 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	// 	});
 	// }
 	$scope.signIn = function() {
+		firebase.once('value', function(snapshot) {
+		  if (snapshot.hasChild($scope.email)) {
+		    alert('exists');
+		  }
+		});
 		firebase.auth().signInWithEmailAndPassword($scope.email, $scope.password).then(function(firebaseUser) {
      	console.log("Signed in as:", firebaseUser.uid);
      	user = firebaseUser.uid; 
@@ -86,7 +91,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
             });
         });
     }
-    
+
 	$scope.addPost = function() {
 		$scope.posts.$add({
 			user: user, 
