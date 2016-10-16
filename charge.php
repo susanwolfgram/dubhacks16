@@ -22,5 +22,6 @@
 ?>
 
 <?php
-  header('Location: penny.php');
+echo('success');
+  // header('Location: penny.php');
 ?>
