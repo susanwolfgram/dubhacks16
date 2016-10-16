@@ -106,9 +106,9 @@
 		        <p>{{post.text}}</p>
 		        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" width="500px"  />
 		        <br />
-		        <h2 ng-click="displayComments(post)">Open Comments</h2>
+		        <h3 ng-click="displayComments(post)">Open Comments</h3>
 		        <div id="comments" ng-show="yesComments" >
-		        	<p ng-repeat="comment in commentArr">{{comment.comment}}</p>
+		        	<p ng-repeat="comment in commentArr">{{comment.comment}} <span>{{comment.user}}</span></p>
 		        </div>
 		        <div class="writeComment">
 					<p>Write a comment:</p>
