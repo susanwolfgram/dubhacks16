@@ -1,10 +1,11 @@
 var app = angular.module("myApp", ["firebase"]);
 
 app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $firebaseAuth) {
-	
+	var user; 
 	$scope.addUser = function() {
 		firebase.auth().createUserWithEmailAndPassword($scope.email, $scope.password).then(function(firebaseUser) {
      	console.log("Signed in as:", firebaseUser.uid);
+     	user = firebaseUser.uid; 
    	}).catch(function(error) {
 		  // Handle Errors here.
 		  var errorCode = error.code;
@@ -36,7 +37,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
   // the message is automatically added to our Firebase database!
   $scope.addPost = function() {
     $scope.posts.$add({
-    	user: firebaseUser.uid, 
+    	user: user, 
       text: $scope.newPostText
     });
   };
