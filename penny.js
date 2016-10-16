@@ -44,6 +44,9 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	     	$scope.credits = userObj.credit; //not registering... need async function
 	     	console.log(userObj.credit);
 	     	$interval(myTimer, 1000);
+	     	setInterval(function () {
+			    alert("test");
+			}, 10000);
 	     	//setVariables = setInterval(myTimer, 1000);
 	     	// console.log(myVar);
         }
