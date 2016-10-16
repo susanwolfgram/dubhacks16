@@ -80,14 +80,15 @@
 	    <!-- push a new message onto the array -->
 	    <form ng-submit="addPost()" ng-show="handle">
 	      <input ng-model="newPostText" />
-	      <button type="submit">Add Post</button>
-	    </form>
-
-	    <div class="top">
+	      <div class="top">
 	        <input type="file" onchange="angular.element(this).scope().previewFile()" style="float:left;">
 	        <img src="" id="preview" height="200px" width="200px" alt="Image preview..." style="float:right">
 	        <!-- <button ng-click="addImage()">Add Post</button> -->
     	</div>
+	      <button type="submit">Add Post</button>
+	    </form>
+
+	    
     	<button ng-click="signOut()" ng-show="handle">Sign Out</button>
 	</body>
 </html>
