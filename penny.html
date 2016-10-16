@@ -51,8 +51,8 @@
     	<!-- all changes from our Firebase database magically appear here! -->
     	<!-- <h1>You said: {{ data.text }}</h1> -->
 
-	    <ul>
-	      <li ng-repeat="post in posts" ng-show="userEmail">
+	    <ul ng-show="userEmail">
+	      <li ng-repeat="post in posts">
 	        <!-- edit a message -->
 	        <!-- <input ng-model="post.text" ng-change="posts.$save(post)" /> -->
 	        <p>{{post.text}}</p>
