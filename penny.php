@@ -80,7 +80,7 @@
 
 			      <!-- <input type="file" onchange="angular.element(this).scope().previewFile()" style="float:left;" class="filestyle" data-classButton="btn btn-primary" data-input="false" data-classIcon="icon-plus" data-buttonText="Upload an image" /> -->
 			        <input type="file" onchange="angular.element(this).scope().previewFile()" style="float:left;" />
-			        <img ng-show="fileName" src="" id="preview" height="200px" width="200px" alt="Image preview..." style="float:right">
+			        <img ng-show="fileName" src="" id="preview" height="200px" width="200px" alt="Image preview...">
 			  		<br />
 			      <button class="md-button" type="submit" style="display: block;clear: both;">Add Post</button>
 			    </form>
