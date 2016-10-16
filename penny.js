@@ -198,7 +198,9 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 		post.cents += 2; 
 		$scope.posts.$save(post); 
 	}
-	$scope.yesComments = false; 
+
+	//$scope.yesComments = false; 
+
 	$scope.displayComments = function(post) {
 		$scope.yesComments = !$scope.yesComments; 
 		$scope.commentArr = post.comments;
