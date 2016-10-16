@@ -94,13 +94,13 @@
 		<!-- Posts -->
 		<div class="posts" ng-show="handle">
 		    <ul >
-		      <li ng-repeat="post in posts | orderBy : 'cents' : true" class="ml5 mt4 br3 ba b--red">
+		      <li ng-repeat="post in posts | orderBy : 'cents' : true" class="mt4 br3 ba b--orange pa0 bg-white w-80 ml6">
 		
 				<div class="dib w3 tc">
 					<!-- Profile pic -->
-					<img src="{{post.userImage}}" alt="user image" class="postAvatar br-100 mw4 ba b--red db" />
+					<img src="{{post.userImage}}" alt="user image" class="postAvatar br-100 mw4 ba b--orange db" />
 					<!-- Like -->
-					<div class="like buttons"></div>
+					<a href="" ng-click="likePost(post)"><div class="like buttons"></div></a>
 
 					<!-- <img src="icons/like.svg" alt="Like" class="db buttons" /> -->
 					<!-- Save -->
@@ -117,20 +117,22 @@
 			        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" width="500px"  />
 		        </div>
 		        
-		        <button ng-click="displayComments(post)">Open Comments</button>
-		        <div id="comments" ng-show="yesComments" >
-		        	<p ng-repeat="comment in commentArr">{{comment.comment}}</p>
-		        </div>
-		        <div class="writeComment">
-					<p>Write a comment:</p>
-					<textarea ng-model="comment" placeholder="Leave your two cents..." class="form-control" rows="1"></textarea>
-					<button ng-click="addComment(post, comment)">Add 2 cents</button>
+		        <div class="commentSection pb2">
+			        <button ng-click="displayComments(post)">Open Comments</button>
+			        <div id="comments" ng-show="yesComments" >
+			        	<p ng-repeat="comment in commentArr">{{comment.comment}}</p>
+			        </div>
+			        <div class="writeComment ma3 pa4 br3 ba b--orange f3">
+						<p class="worksans orange">Write a comment:</p>
+						<textarea ng-model="comment" placeholder="Leave your two cents..." class="form-control w-90" rows="1"></textarea>
+						<button ng-click="addComment(post, comment)" class="mt0 fr cf postComment br3 f4 pa2 ph3 bg-orange">Post</button>
+					</div>
 				</div>
 		        <!-- <input ng-model="comment"/> -->
 		        <!-- <button ng-click="addComment(post, comment)">Add 2 cents</button> -->
-		        <button ng-click="likePost(post)">+1 cent</button>
+		        <!-- <button ng-click="likePost(post)">+1 cent</button> -->
 		        <!-- delete a message -->
-		        <button ng-click="posts.$remove(post)">Delete Post</button>
+		        <!-- <button ng-click="posts.$remove(post)">Delete Post</button> -->
 		     
 		    
 		      </li>
