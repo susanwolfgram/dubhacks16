@@ -117,7 +117,7 @@
 					<p ng-show="post.comments != 0" class="tc orange f4 center"><a href="" ng-click="displayComments(post)" class="orange hoverNone">Show all comments</a></p>
 		       
 	           <div id="comments" ng-show="displayComments(post)" >
-		        	<div ng-repeat="comment in commentArr" class="writeComment w-90 center pa3 pl4 br3 ba b--black-70 f3">
+		        	<div ng-repeat="comment in commentArr" class="writeComment w-90 center pa3 pl4 br3 ba b--black-70 f3 mb2">
 						<p class="worksans black-70">{{comment.user}}</p>
 						<p class="black-50 f4">{{comment.comment}}</p>
 					</div>
