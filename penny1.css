@@ -16,3 +16,12 @@ header {
     padding: 5px;
     margin-bottom: 30px;
 }
+
+.head-circle {
+    width: 30px;
+    height: 30px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    background: gray;
+}
