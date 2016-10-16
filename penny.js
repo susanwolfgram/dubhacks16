@@ -51,7 +51,8 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
     $scope.posts.$add({
     	user: user, 
       	text: $scope.newPostText,
-      	cents: 0 
+      	cents: 0,
+      	comments: ""
     });
   };
 
