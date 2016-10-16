@@ -179,7 +179,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	$scope.yesComments = false; 
 	$scope.displayComments = function(post) {
 		$scope.yesComments = !$scope.yesComments; 
-		$scope.commentArr = $firebaseArray(post.comments);
+		$scope.commentArr = post.comments;
 	}
 
 	$scope.likePost = function(post) {
