@@ -8,7 +8,7 @@ body {
     margin: 0;
     color: #323232;
     background-color: #FAFAFA;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 header {
@@ -56,6 +56,6 @@ ul {
 }
 
 #addPost {
-	background-color: #FBE9E7;
+	background-color: #F5F5F5;
 	padding: 20px;
 }
