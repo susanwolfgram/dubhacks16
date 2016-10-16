@@ -165,10 +165,10 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	$scope.addComment = function(post, comment) {
 		if (post.comments == 0) {
 			console.log(post.$id);
-			post.comments = [comment]; 
+			post.comments = [{"comment" : comment, "user" : user}]; 
 		} else {
 		    console.log(post.comments);
-		    post.comments.push(comment);
+		    post.comments.push({"comment": comment, "user", user});
 		}
 		post.cents += 2; 
 		$scope.posts.$save(post); 
