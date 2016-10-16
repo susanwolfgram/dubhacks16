@@ -142,7 +142,7 @@
 		        	<div class="writeComment ma3 pa4 br3 ba b--orange f3">
 						<p class="worksans orange">Write a comment:</p>
 						<textarea id="addComm" ng-model="comment" placeholder="Leave your two cents..." class="form-control w-90" rows="1"></textarea>
-						<button ng-click="addComment(post, comment)" class="mt0 fr cf postComment br3 f4 pa2 ph3 bg-orange">Post</button>
+						<button ng-click="addComment(post, comment); comment = ''" class="mt0 fr cf postComment br3 f4 pa2 ph3 bg-orange">Post</button>
 					</div>
 					<p ng-show="post.comments != 0" class="tc orange f4 center"><a href="" ng-click="displayComments(post)" class="orange hoverNone">Show all comments</a></p>
 		       
