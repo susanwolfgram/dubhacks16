@@ -35,126 +35,35 @@
   };
   firebase.initializeApp(config);
 </script>
-<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-auth.js"></script>
+<!-- <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-auth.js"></script> -->
 
 	</head>
 
 	<!-- Initiate app and controller on body -->
 	<body ng-app="myApp" ng-controller="myCtrl">
+		 <!-- <input type="text" ng-model="data.text"/> -->
+    	<!-- all changes from our Firebase database magically appear here! -->
+    	<!-- <h1>You said: {{ data.text }}</h1> -->
 
-		<!-- Header with logout button -->
-		<header>
-			<div class="log-out" ng-show="userId">
-				<!-- <span>{{users[userId].handle}}</span> -->
-				<button ng-click="logOut()" class="btn btn-warning">Logout</button>
-			</div>
-		</header>	
-		
-		<!-- Container div -->
-		<div class="container">
-			
-			<!-- Sign-in/sign-up form: show if userId isn't defined -->
-			<form name="myForm" novalidate ng-show="!userId">
-			
-				<!-- Bind model "handle" to this input, set minimum length, and make it required -->
-				<!-- <div class="form-group">
-					<label>Handle:</label>
-					<input name="handle" class="form-control" ng-minlength="6" ng-model="handle">
-					<p ng-show="myForm.handle.$error.minlength" class="help-block">Username is too short.</p>	 -->
-					
-					<!-- Add an error message if the length is too short -->	
-					
-			<!-- 	</div>	 -->
-
-				<!-- Input for image URL -->
-				<!-- <div class="form-group">
-					<label>Image URL:</label>
-					<img ng-src="{{userImage}}">							
-					<input name="img" class="form-control" ng-model="userImage">
-				</div> -->
-
-				<!-- Bind model "email" to this input and make it required -->
-				<div class="form-group">
-					<label>Email:</label>
-					<input  name="email" type="email" class="form-control" ng-model="email"></input>
-					<p ng-show="myForm.email.$error.email" class="help-block">Enter valid email.</p> 
-
-					<!-- Show an error message if the email is not valid -->	
-				</div>
-
-				<!-- Password -->
-				<div class="form-group">
-					<label>Password:</label>
-					<input  name="password" type="password" class="form-control" ng-model="password" required></input>      
-				</div>
-
-				<!-- Submit buttons: should only be active if certain inputs are valid -->
-				<div class="form-group">
-					<button ng-click="signUp()" ng-disabled="myForm.$invalid" type="submit" class="btn btn-primary">Sign-up</button> 
-					<button ng-click="signIn()" ng-disabled="myForm.email.$invalid || myForm.password.$invalid" type="submit" class="btn btn-primary">Sign-in</button>
-				</div>
-
-			</form>
-
-			<!-- Show tweets (if userId is defined) -->
-			<div ng-show="userId">
-
-				<!-- Element for writing tweets -->
-				<div class="tweet-box write-tweet">
-					<div>
-						<!-- Show image of current user -->
-						<img class="image" ng-src="{{users[userId].userImage}}"></img>
-
-						<!-- Form for writing tweets -->
-						<form name="tweet-input" id="tweet-input">
-
-							<!-- Bind model newTweet to a textarea element.
-								set a maximum length of 140 characters -->					
-							<textarea placeholder="What's Happening..." ng-model="newPost" name="text" class="form-control" requred ng-maxlength="140"></textarea>
-							
-							<!-- Tweet button -->
-							<div class="form-group send-tweet">
-
-								<!-- Execute the tweet function when clicked -->
-								<button ng-click="tweet()" ng-disabled="tweet-input.$invalid" type="submit" class="btn btn-primary">
-									<i class="fa fa-pencil-square-o"></i> Post
-								</button> 					
-							</div>
-						</form>
-					</div>
-				</div>
-				
-				<!-- Show everyone's tweets! -->
-				<div>
-
-					<!-- Use ng-repeat directive to repeat a div for each element in tweets -->
-					<div class="tweet-box" ng-repeat="tweet in tweets | orderBy : 'time'">
-						<div>
-							<!-- Put an img tag that shows the userImage of that tweet -->
-							<img class="image" ng-src="{{users[tweet.userId].userImage}}"></img>
-							
-							<!-- Put in the twitter handle and time of tweet -->
-							<span class="handle">{{users[tweet.userId].handle}}</span>
-							<span class="time">{{tweet.time | date}}</span>
-						</div>
-
-						<!-- Put in the text of the tweet -->
-						<div class="tweet">
-							{{tweet.text}}
-						</div>
-
-						<!-- Create a section for showing tweet likes -->
-						<div class="likes">
-							<!-- Show a heart icon that, when clicked, 
-								passes your tweet to your "like" function -->
-							<i class="fa fa-heart-o" ng-click="like(tweet)"></i>
-							<!-- Show your total number of likes -->
-							<span>{{tweet.likes}}</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+	    <ul>
+	      <li ng-repeat="message in messages">
+	        <!-- edit a message -->
+	        <input ng-model="message.text" ng-change="messages.$save(message)" />
+	        <!-- delete a message -->
+	        <button ng-click="messages.$remove(message)">Delete Message</button>
+	      </li>
+	    </ul>
+	    <!-- push a new message onto the array -->
+	    <form ng-submit="addMessage()">
+	      <input ng-model="newMessageText" />
+	      <button type="submit">Add Message</button>
+	    </form>
 	</body>
 </html>
+
+
+
+
+
+
