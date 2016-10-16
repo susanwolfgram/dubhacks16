@@ -89,7 +89,7 @@
 	
 		<!-- Posts -->
 		<div class="invis" ng-show="handle">
-		<section class="whatever">
+			<section class="whatever">
 				<div class="post" ng-repeat="post in posts | orderBy : 'cents' : true">
 					<h1>USER</h1>
 					<p>{{post.text}}</p>
