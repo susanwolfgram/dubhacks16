@@ -32,6 +32,9 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 			$scope.handle = true; 
 			ref = firebase.database().ref().child("posts");
 	     	$scope.$digest();
+	     	
+     	$scope.credits = userObj.credit; 
+     	console.log(userObj.credit);
         }
     }
 
