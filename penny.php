@@ -46,8 +46,8 @@
 	<body ng-app="myApp" ng-controller="myCtrl" ng-init="load()">
 	<div class="container">
 		<header>
-			<button class="md-button" ng-click="signOut()" ng-show="handle" style="float: right;">Sign Out</button>
-			<div class="head-circle"></div>	
+			<button class="md-button" ng-click="signOut()" ng-show="handle">Sign Out</button>
+			<div class="head-circle" style="float: left;"></div>	
 		</header>
 
 		<!-- Add Money -->
