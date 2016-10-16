@@ -207,8 +207,10 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	//$scope.yesComments = false; 
 
 	$scope.displayComments = function(post) {
+		debugger; 
 		//$scope.yesComments = !$scope.yesComments; 
 		post.showComments = !post.showComments; 
+
 		$scope.$digest();
 	}
 
