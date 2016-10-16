@@ -71,7 +71,7 @@
 		<div class="invis" ng-show="handle">
 		<section class="whatever">
 		    <ul ng-show="handle">
-		      <li ng-repeat="post in posts | orderBy : 'cents' : true" style="text-decoration: none;">
+		      <li ng-repeat="post in posts | orderBy : 'cents' : true">
 		      <div class="whatever">
 		        <!-- edit a message -->
 		        <!-- <input ng-model="post.text" ng-change="posts.$save(post)" /> -->
