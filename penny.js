@@ -19,6 +19,10 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
      	console.log("Signed in as:", firebaseUser.uid);
      	user = firebaseUser.uid; 
      	$scope.userEmail = $scope.email; 
+     	var users = firebase.database().ref().child("users");
+		var userArr = $firebaseArray(users);
+		var currentUser = userArr.$getRecord(user);
+		console.log(currentUser);
      	$scope.$digest();
    	}).catch(function(error) {
 		  // Handle Errors here.
@@ -28,6 +32,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	}
 
 	var ref = firebase.database().ref().child("posts");
+
 	// create a synchronized array
 	$scope.posts = $firebaseArray(ref);
 	// add new items to the array
