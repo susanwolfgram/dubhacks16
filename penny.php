@@ -98,13 +98,14 @@
 					<img src="{{post.userImage}}" alt="user image" class="postAvatar br-100 mw4 ba b--red db" />
 					<!-- Like -->
 					<div title="add 1 cent" ng-click="likePost(post)" class="like buttons"></div>
+					 {{post.cents}} cents
 		       </div>
 
 				<div class="postContent dib v-top">
 				<div class="name mt0 w-100 db">
 		        	<h1 class="name mt0 white">{{post.user}}</h1>
 	        	</div>
-		        <p>{{post.text}} {{post.cents}} cents</p>
+		        <p>{{post.text}}</p>
 		        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" width="500px"  />
 		        
 		        	<div class="writeComment ma3 pa4 br3 ba b--orange f3">
