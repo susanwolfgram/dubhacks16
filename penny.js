@@ -1,5 +1,8 @@
 // Create application with dependency 'firebase'
 var myApp = angular.module('myApp', ['firebase']);
+var mainApp = firebase.initializeApp({
+    console.log("init");
+  });
 
 // Bind controller, passing in $scope, $firebaseAuth, $firebaseArray, $firebaseObject
 myApp.controller('myCtrl', function($scope, $firebaseAuth, $firebaseArray, $firebaseObject){
