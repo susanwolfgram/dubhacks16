@@ -1,9 +1,6 @@
 // Create application with dependency 'firebase'
 var myApp = angular.module('myApp', ['firebase']);
-// var mainApp = firebase.initializeApp({
-//     console.log("init");
-//   });
-myApp.initializeApp();
+
 // Bind controller, passing in $scope, $firebaseAuth, $firebaseArray, $firebaseObject
 myApp.controller('myCtrl', function($scope, $firebaseAuth, $firebaseArray, $firebaseObject){
 	$scope.user = {}
@@ -12,7 +9,7 @@ myApp.controller('myCtrl', function($scope, $firebaseAuth, $firebaseArray, $fire
 	// }
 	    // Create a variable 'ref' to reference your firebase storage
 	var ref = new Firebase("https://penny-fyt-123.firebaseio.com/");
-	console.log("here");
+	console.log(ref);
 	console.log($scope.password);
 	firebase.auth().signInWithEmailAndPassword($scope.user.email, $scope.user.password).catch(function(error) {
 	  // Handle Errors here.
