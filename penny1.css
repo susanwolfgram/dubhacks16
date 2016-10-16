@@ -1,20 +1,31 @@
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900);
+html {
+    
+}
 
 body {
     font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-    font-size: 12px;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: geometricPrecision !important;
+
+    font-size: 1.2rem;
     line-height: 1.4;
     margin: 0;
     color: #323232;
-    background-color: #FAFAFA;
+    /*background-color: #FAFAFA;*/
+    background-color: rgba(131, 56, 21, .11);
     overflow: scroll;
 }
 
-header {
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Work Sans', sans-serif;
+}
+
+nav {
     background-color: #8D6E63;
-    height: 55px;
-    padding: 5px;
+    height: 6rem;
+    padding: 1rem;
+    width: 100%;
     margin-bottom: 30px;
     text-align: right;
 }
@@ -29,9 +40,10 @@ header {
 }
 
 .container {
-	margin-left: auto;
-	margin-right: auto;
-	width: 600px;
+	/*margin-left: auto;
+	margin-right: auto;*/
+	/*width: 600px;*/
+  padding: 0;
 }
 
 ul {

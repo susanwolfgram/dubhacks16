@@ -10,18 +10,22 @@
 		<!-- Styles -->
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:600|Work+Sans:600" rel="stylesheet">
+		<link rel="stylesheet" href="https://unpkg.com/tachyons@4.5.3/css/tachyons.min.css"/>
 
 		<!-- AngularJS -->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 
-
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
 
 		<!-- AngularFire -->
 		<script src="https://cdn.firebase.com/libs/angularfire/2.0.2/angularfire.min.js"></script>
 		
 		<!-- Scripts -->
-		<link href="penny.css" rel="stylesheet" type="text/css" />
+		<link href="penny1.css" rel="stylesheet" type="text/css" />
 		<script type="text/javascript" src="penny.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase.js"></script>
 <script>
@@ -41,50 +45,89 @@
 	</head>
 
 	<!-- Initiate app and controller on body -->
-	<body ng-app="myApp" ng-controller="myCtrl">
-	<?php require_once('./config.php'); ?>
-		<form action="charge.php" method="post">
+	<body ng-app="myApp" ng-controller="myCtrl" ng-init="load()">
+	<div class="container">
+		<nav>
+			<div class="head-circle" style="float: left;"></div>
+			<button class="md-button" ng-click="signOut()" ng-show="handle">Sign Out</button>
+
+			 <div class="dropdown">
+  				<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example</button>
+ 				 <ul class="dropdown-menu">
+				    <li><a href="#">HTML</a></li>
+				    <li><a href="#">CSS</a></li>
+				    <li><a href="#">JavaScript</a></li>
+  				</ul>
+			</div>
+			
+		</nav>
+
+		<!-- Add Money -->
+		<?php require_once('./config.php'); ?>
+		<form action="charge.php" method="post" ng-show="handle">
+		  <button ng-click="addOneDollar()"> <!-- not sure how to add one dollar after success --> 
 		  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 		          data-key="<?php echo $stripe['publishable_key']; ?>"
 		          data-description="Access for a year"
-		          data-amount="5000"
-		          data-locale="auto"></script>
+		          data-amount="100"
+		          data-locale="auto">  	
+		  </script>
+		  </button>
 		</form>
+		<!-- <button ng-click="addOneDollar()">Test Add One Dollar</button> -->
 
+
+		<!-- sign in -->
 		<form ng-submit="signIn()" ng-show="!handle" >
-			<input type="text" ng-model="email"/>
-			<input type="text" ng-model="password"/>
-			<button type="submit">Sign In</button>
+			<input class="form-control" type="text" placeholder="Email Address" ng-model="email"/>
+			<input class="form-control" type="password" placeholder="Password" ng-model="password"/>
+			<button class="form-control" type="submit">Sign In</button>
 		</form>
-		 <!-- <input type="text" ng-model="data.text"/> -->
-    	<!-- all changes from our Firebase database magically appear here! -->
-    	<!-- <h1>You said: {{ data.text }}</h1> -->
 
-	    <ul ng-show="userEmail">
-	      <li ng-repeat="post in posts | orderBy : 'cents' : true">
-	        <!-- edit a message -->
-	        <!-- <input ng-model="post.text" ng-change="posts.$save(post)" /> -->
-	        <p>{{post.text}}</p>
-	        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" height="200px" width="200px"  />
-	        <br />
-	        <input ng-model="comment"/>
-	        <button ng-click="addComment(post, comment)">Add 2 cents</button>
-	        <button ng-click="likePost(post)">+1 cent</button>
-	        <!-- delete a message -->
-	        <button ng-click="posts.$remove(post)">Delete Post</button>
-	      </li>
-	    </ul>
-	    <!-- push a new message onto the array -->
-	    <form ng-submit="addPost()">
-	      <input ng-model="newPostText" />
-	      <button type="submit">Add Post</button>
-	    </form>
+		<!-- Add Post  -->
+	    <div id="addPost" ng-show="handle">
+				<!-- <div class="post"> -->
+			    <form ng-submit="addPost()" ng-show="handle">
+			      <textarea ng-model="newPostText" placeholder="Compose a post..." class="form-control" rows="5"></textarea>
 
-	    <div class="top">
-	        <input type="file" onchange="angular.element(this).scope().previewFile()" style="float:left;">
-	        <img src="" id="preview" height="200px" width="200px" alt="Image preview..." style="float:right">
-	        <!-- <button ng-click="addImage()">Add Post</button> -->
+			      <!-- <input type="file" onchange="angular.element(this).scope().previewFile()" style="float:left;" class="filestyle" data-classButton="btn btn-primary" data-input="false" data-classIcon="icon-plus" data-buttonText="Upload an image" /> -->
+			        <input type="file" onchange="angular.element(this).scope().previewFile()" style="float:left;" />
+			        <img ng-show="fileName" src="" id="preview" height="200px" width="200px" alt="Image preview..." style="float:right">
+			  		<br />
+			      <button class="md-button" type="submit" style="display: block;clear: both;">Add Post</button>
+			    </form>
+			    
+	    </div>
+	
+		<!-- Posts -->
+		<div class="posts" ng-show="handle">
+		    <ul >
+		      <li ng-repeat="post in posts | orderBy : 'cents' : true">
+		
+		        <i class="material-icons">account_circle</i>
+		        <p>{{post.text}}</p>
+		        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" height="200px" width="200px"  />
+		        <br />
+		        <div class="writeComment">
+					<p>Write a comment:</p>
+					<textarea ng-model="comment" placeholder="Leave your two cents..." class="form-control" rows="3"></textarea>
+					<button ng-click="addComment(post, comment)">Add 2 cents</button>
+				</div>
+		        <!-- <input ng-model="comment"/> -->
+		        <!-- <button ng-click="addComment(post, comment)">Add 2 cents</button> -->
+		        <button ng-click="likePost(post)">+1 cent</button>
+		        <!-- delete a message -->
+		        <button ng-click="posts.$remove(post)">Delete Post</button>
+		     
+		    
+		      </li>
+		    </ul>
+		</div>
+		 
+	    
+    	
     	</div>
+    
 	</body>
 </html>
 
