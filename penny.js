@@ -195,8 +195,11 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 		userObj.$save(); 
 		myTimer();
 
-		var tarea = document.querySelectorAll("addComm");
-		tarea.value = "";
+		var tarea = document.querySelectorAll(".addComm");
+		var i;
+		for (i = 0; i < tarea.length; i++) {
+		    tarea[i].value = "";
+		}
 
 	}
 
