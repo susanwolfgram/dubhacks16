@@ -39,7 +39,7 @@
 	};
 	firebase.initializeApp(config);
 </script>
-<?php $count = 0; ?> 
+
 <!-- <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-auth.js"></script> -->
 
@@ -47,6 +47,7 @@
 
 	<!-- Initiate app and controller on body -->
 	<body ng-app="myApp" ng-controller="myCtrl" ng-init="load()">
+	<?php $count = 0; ?> 
 	<div class="container">
 		<nav>
 			<button class="md-button" ng-click="signOut()" ng-show="handle">Sign Out</button>
