@@ -10,6 +10,8 @@
 		<!-- Styles -->
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:600|Work+Sans:600" rel="stylesheet">
+		<link rel="stylesheet" href="https://unpkg.com/tachyons@4.5.3/css/tachyons.min.css"/>
 
 		<!-- AngularJS -->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
@@ -23,7 +25,8 @@
 		<!-- Scripts -->
 		<link href="penny1.css" rel="stylesheet" type="text/css" />
 		<script type="text/javascript" src="penny.js"></script>
-		<script type="text/javascript" src="bootstrap-filestyle.min.js"> </script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
 
 <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase.js"></script>
 <script>

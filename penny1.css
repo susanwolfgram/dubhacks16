@@ -30,13 +30,13 @@ nav {
     text-align: right;
 }
 
-.head-circle {
-    width: 45px;
-    height: 45px;
+.head-circle, .s-circle {
+    width: 30px;
+    height: 30px;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
-    border-radius: 25px;
-    background: #BDBDBD;
+    border-radius: 15px;
+    background: gray;
 }
 
 .container {
@@ -49,6 +49,16 @@ nav {
 ul {
 	list-style: none;
 	padding: 0;
+}
+
+.postAvatar {
+  margin-left: -5.7rem;
+  margin-top: -2.5rem;
+
+}
+
+.name {
+  background: #D7855F
 }
 
 .md-button {
@@ -78,5 +88,5 @@ li {
 
 #addPost {
 	background-color: #F5F5F5;
-	padding: 20px;
+	padding: 2rem;
 }

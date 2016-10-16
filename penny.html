@@ -26,6 +26,7 @@
 		<link href="penny1.css" rel="stylesheet" type="text/css" />
 		<script type="text/javascript" src="penny.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
 
 <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase.js"></script>
 <script>
@@ -47,20 +48,10 @@
 	<!-- Initiate app and controller on body -->
 	<body ng-app="myApp" ng-controller="myCtrl" ng-init="load()">
 	<div class="container">
-		<nav>
-			<div class="head-circle" style="float: left;"></div>
+		<header>
 			<button class="md-button" ng-click="signOut()" ng-show="handle">Sign Out</button>
-
-			 <div class="dropdown">
-  				<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example</button>
- 				 <ul class="dropdown-menu">
-				    <li><a href="#">HTML</a></li>
-				    <li><a href="#">CSS</a></li>
-				    <li><a href="#">JavaScript</a></li>
-  				</ul>
-			</div>
-			
-		</nav>
+			<div class="head-circle" style="float: left;"></div>	
+		</header>
 
 		<!-- Add Money -->
 		<?php require_once('./config.php'); ?>
@@ -92,7 +83,8 @@
 
 			      <!-- <input type="file" onchange="angular.element(this).scope().previewFile()" style="float:left;" class="filestyle" data-classButton="btn btn-primary" data-input="false" data-classIcon="icon-plus" data-buttonText="Upload an image" /> -->
 			        <input type="file" onchange="angular.element(this).scope().previewFile()" style="float:left;" />
-			        <img ng-show="fileName" src="" id="preview" height="200px" width="200px" alt="Image preview..." style="float:right">
+			        <br />
+			        <img ng-show="fileName" src="" id="preview" height="200px" width="200px" alt="Image preview..." style="clear:both;">
 			  		<br />
 			      <button class="md-button" type="submit" style="display: block;clear: both;">Add Post</button>
 			    </form>
@@ -102,15 +94,28 @@
 		<!-- Posts -->
 		<div class="posts" ng-show="handle">
 		    <ul >
-		      <li ng-repeat="post in posts | orderBy : 'cents' : true">
+		      <li ng-repeat="post in posts | orderBy : 'cents' : true" class="ml5 mt4 br3 ba b--red">
 		
-		        <i class="material-icons">account_circle</i>
-		        <p>{{post.text}}</p>
-		        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" height="200px" width="200px"  />
-		        <br />
+				<div class="dib buttons mr4">
+					<img src="{{post.userImage}}" alt="user image" class="postAvatar br-100 mw4 ba b--red" />
+				</div>
+
+				<div class="postContent dib v-top">
+					<div class="name mt0 w-100 db">
+			        	<h1 class="name mt0 white">{{post.user}}</h1>
+		        	</div>
+
+			        <p>{{post.text}}</p>
+			        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" width="500px"  />
+		        </div>
+		        
+		        <button ng-click="displayComments(post)">Open Comments</button>
+		        <div id="comments" ng-show="yesComments" >
+		        	<p ng-repeat="comment in commentArr">{{comment.comment}}</p>
+		        </div>
 		        <div class="writeComment">
 					<p>Write a comment:</p>
-					<textarea ng-model="comment" placeholder="Leave your two cents..." class="form-control" rows="3"></textarea>
+					<textarea ng-model="comment" placeholder="Leave your two cents..." class="form-control" rows="1"></textarea>
 					<button ng-click="addComment(post, comment)">Add 2 cents</button>
 				</div>
 		        <!-- <input ng-model="comment"/> -->
