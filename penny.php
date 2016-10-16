@@ -14,7 +14,7 @@
 		<!-- AngularJS -->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 
-
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 		<!-- AngularFire -->
 		<script src="https://cdn.firebase.com/libs/angularfire/2.0.2/angularfire.min.js"></script>
@@ -104,7 +104,7 @@
 		    <ul ng-show="handle">
 		      <li ng-repeat="post in posts | orderBy : 'cents' : true">
 		      <div class="whatever">
-		        
+		        <i class="material-icons">account_circle</i>
 		        <p>{{post.text}}</p>
 		        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" height="200px" width="200px"  />
 		        <br />
