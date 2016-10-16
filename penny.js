@@ -96,7 +96,7 @@ var uploadTask = storageRef.child('images/' + file.name).put(file, metadata);
 	        });
 	    });
 	}
-}
+	
 
 	
 
