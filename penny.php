@@ -42,8 +42,23 @@
 
 	<!-- Initiate app and controller on body -->
 	<body ng-app="myApp" ng-controller="myCtrl">
-	<?php require_once('./config.php'); ?>
-		<form action="charge.php" method="post">
+	<?php require_once('./config.php'); 
+	  require_once('./config.php');
+  if (isset($_POST['stripeToken'])) {
+  $token  = $_POST['stripeToken'];
+
+  $customer = \Stripe\Customer::create(array(
+      'email' => 'customer@example.com',
+      'source'  => $token
+  ));
+
+  $charge = \Stripe\Charge::create(array(
+      'customer' => $customer->id,
+      'amount'   => 100,
+      'currency' => 'usd'
+  ));
+}?>
+		<form action="penny.php" method="post">
 		  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 		          data-key="<?php echo $stripe['publishable_key']; ?>"
 		          data-description="Access for a year"

@@ -1,6 +1,6 @@
 <?php
   require_once('./config.php');
-
+  if (isset($_POST['stripeToken'])) {
   $token  = $_POST['stripeToken'];
 
   $customer = \Stripe\Customer::create(array(
@@ -13,6 +13,7 @@
       'amount'   => 100,
       'currency' => 'usd'
   ));
+}
 //echo('success');
-header('Location: penny.php?dollar=true');
+//header('Location: penny.php?dollar=true');
 ?>
