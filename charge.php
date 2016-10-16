@@ -15,5 +15,5 @@
   ));
 }
 echo('success');
-//header('Location: penny.php?dollar=true');
+header('Location: penny.php?dollar=true');
 ?>
