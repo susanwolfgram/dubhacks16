@@ -129,7 +129,7 @@
 		        <!-- <button ng-click="likePost(post)">+1 cent</button> -->
 		        <!-- delete a message -->
 		        <button ng-show="post.user == userName" ng-click="posts.$remove(post)">Delete Post</button>
-		     </div>
+		    
 		    
 		      </li>
 		    </ul>
