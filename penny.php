@@ -71,16 +71,15 @@
 		</form>
 
 		<!-- Add Post  -->
-	    <div ng-show="handle">
+	    <div id="addPost" ng-show="handle">
 				<!-- <div class="post"> -->
 			    <form ng-submit="addPost()" ng-show="handle">
 			      <textarea ng-model="newPostText" placeholder="Compose a post..."></textarea>
 			      <div class="top">
 			        <input type="file" onchange="angular.element(this).scope().previewFile()" style="float:left;" />
 			        <img ng-show="fileName" src="" id="preview" height="200px" width="200px" alt="Image preview..." style="float:right">
-			        <!-- <button ng-click="addImage()">Add Post</button> -->
-		    	<!-- </div> -->
-			      <button class="md-button" type="submit">Add Post</button>
+			  		
+			      <button class="md-button" type="submit" style="clear: both;">Add Post</button>
 			    </form>
 			    </div>
 	    </div>
