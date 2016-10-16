@@ -84,6 +84,11 @@
 
 	    <!-- Add Post  -->
 	    <div class="invis">
+	    	<div class="post-circles">
+				<div class="b-circle"></div>
+			</div>
+			<section class="whatever">
+			<div class="post">
 		    <form ng-submit="addPost()" ng-show="handle">
 		      <input ng-model="newPostText" />
 		      <div class="top">
@@ -93,6 +98,8 @@
 	    	</div>
 		      <button type="submit">Add Post</button>
 		    </form>
+		    </div>
+			</section>
 	    </div>
 
 	    
