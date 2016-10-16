@@ -52,10 +52,24 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
     	user: user, 
       	text: $scope.newPostText,
       	cents: 0,
-      	time: Firebase.ServerValue.TIMESTAMP,
-      	comments: ""
+      	// time: Firebase.ServerValue.TIMESTAMP,
+      	comments: 0
     });
   };
+  $scope.addComment = function(post, comment) {
+    if (post.comments == 0) {
+      var foo = new Firebase("https://penny-fyt-123.firebaseio.com/posts/" + post.$id);      
+      var newChildRef = foo.push([]);
+      post.comment = newChildRef.key();
+      $scope.posts.$save(post);  
+    } 
+    $scope.songs = []; 
+    var baz = new Firebase("https://penny-fyt-123.firebaseio.com/posts/" + post.$id + "/" + post.comment);      
+    var newChild = baz.push(angular.copy(comment));
+    var playlist = $firebaseArray(baz); 
+    $scope.posts = playlist;
+    console.log(playlist);      
+  }
 
 
 });
