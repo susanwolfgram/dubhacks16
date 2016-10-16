@@ -59,6 +59,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
   $scope.addComment = function(post, comment) {
     if (post.comments == 0) {
     	console.log(post.comments);
+    	console.log(post.$id);
       // var foo = new Firebase("https://penny-fyt-123.firebaseio.com/posts/" + post.$id);      
       // var newChildRef = foo.push([]);
       // post.comment = newChildRef.key();
