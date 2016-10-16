@@ -97,7 +97,7 @@
 		        <br />
 		        <div class="writeComment">
 					<p>Write a comment:</p>
-					<textarea ng-model="comment" placeholder="Type something..."></textarea>
+					<textarea ng-model="comment" placeholder="Leave your two cents..." class="form-control" rows="3"></textarea>
 					<button ng-click="addComment(post, comment)">Add 2 cents</button>
 				</div>
 		        <!-- <input ng-model="comment"/> -->
