@@ -22,7 +22,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
      	var users = firebase.database().ref().child("users");
 		var userArr = $firebaseArray(users);
 		var currentUser = userArr.$getRecord(user);
-		console.log(currentUser);
+		console.log(currentUser.handle);
      	$scope.$digest();
    	}).catch(function(error) {
 		  // Handle Errors here.
