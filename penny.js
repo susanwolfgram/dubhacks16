@@ -62,6 +62,9 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
     	console.log(post.$id);
     	var foo = firebase.database().ref().child("posts").child(post.$id);
     	console.log(foo);
+    	var newChildRef = foo.push([]);
+	      post.comment = newChildRef.key();
+	      $scope.posts.$save(post); 
       // var foo = new Firebase("https://penny-fyt-123.firebaseio.com/posts/" + post.$id);      
       // var newChildRef = foo.push([]);
       // post.comment = newChildRef.key();
