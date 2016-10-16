@@ -93,7 +93,7 @@
 		    <ul >
 		      <li ng-repeat="post in posts | orderBy : 'cents' : true">
 		
-		        <h1><img src="{{post.userImage}}" alt="user image" />{{post.user}}</h1>
+		        <h1><img src="{{post.userImage}}" alt="user image" height="100px" />{{post.user}}</h1>
 		        <p>{{post.text}}</p>
 		        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" width="500px"  />
 		        <br />
