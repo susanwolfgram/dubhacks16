@@ -91,7 +91,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 			user: user, 
 		  	text: $scope.newPostText,
 		  	cents: 0,
-			image: imgUrl,
+			image: imgUrl? imgUrl : "",
 		  	// time: Firebase.ServerValue.TIMESTAMP,
 		  	comments: 0
 		});
