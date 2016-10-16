@@ -168,7 +168,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 			post.comments = [{"comment" : comment, "user" : user}]; 
 		} else {
 		    console.log(post.comments);
-		    post.comments.push({"comment": comment, "user", user});
+		    post.comments.push({"comment": comment, "user": user});
 		}
 		post.cents += 2; 
 		$scope.posts.$save(post); 
