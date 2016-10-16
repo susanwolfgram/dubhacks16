@@ -43,7 +43,7 @@
 	<!-- Initiate app and controller on body -->
 	<body ng-app="myApp" ng-controller="myCtrl" ng-init="load()">
 	<?php require_once('./config.php'); ?>
-		<form ng-submit="addOneDollar()" action="charge.php" method="post" >
+		<form ng-click="addOneDollar()" action="charge.php" method="post" >
 		  <script  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 		          data-key="<?php echo $stripe['publishable_key']; ?>"
 		          data-description="Access for a year"
