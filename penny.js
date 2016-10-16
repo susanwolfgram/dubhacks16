@@ -102,7 +102,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	}
 
 	function myTimer() {
-		//console.log('hello from the timer');
+		console.log('hello from the timer');
 	    $scope.credits = userObj.credit;
 	    $scope.userName = userObj.handle; 
 	    $scope.$digest();
