@@ -195,9 +195,8 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 		userObj.$save(); 
 		myTimer();
 
-		var form = document.getElementById("addComm");
-		form.value = ''; 
-		$("#addComm").innerHTML = 'kjahsdflah';
+		var tarea = document.getElementById("addComm");
+		tarea.val("");
 
 	}
 
