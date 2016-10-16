@@ -47,16 +47,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	$scope.posts = $firebaseArray(ref);
 	// add new items to the array
 	// the message is automatically added to our Firebase database!
-	$scope.addPost = function() {
-		$scope.posts.$add({
-			user: user, 
-		  	text: $scope.newPostText,
-		  	cents: 0,
-			image: "",
-		  	// time: Firebase.ServerValue.TIMESTAMP,
-		  	comments: 0
-		});
-	};
+	
 
 	//IMAGES
 
@@ -95,7 +86,16 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
             });
         });
     }
-
+	$scope.addPost = function() {
+		$scope.posts.$add({
+			user: user, 
+		  	text: $scope.newPostText,
+		  	cents: 0,
+			image: imgUrl,
+		  	// time: Firebase.ServerValue.TIMESTAMP,
+		  	comments: 0
+		});
+	};
 	$scope.addImage = function() {
 		console.log(imgUrl);
 		$scope.posts.$add({
