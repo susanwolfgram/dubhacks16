@@ -77,7 +77,7 @@
 			      <input ng-model="newPostText" />
 			      <div class="top">
 			        <input type="file" onchange="angular.element(this).scope().previewFile()" style="float:left;" ng-model="fileName">
-			        <img ng-show="fileName.length > 0" src="" id="preview" height="200px" width="200px" alt="Image preview..." style="float:right">
+			        <img ng-show="fileName" src="" id="preview" height="200px" width="200px" alt="Image preview..." style="float:right">
 			        <!-- <button ng-click="addImage()">Add Post</button> -->
 		    	<!-- </div> -->
 			      <button class="md-button" type="submit">Add Post</button>
