@@ -9,6 +9,8 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	var usersArr = $firebaseArray(usersFB); 
 	var userObj;
 	$scope.userName = false; 
+	$scope.listClicked = false; 
+	$scope.yesComments = false; 
 	//var userEmail; 
 	// $scope.addUser = function() {
 	// 	firebase.auth().createUserWithEmailAndPassword($scope.email, $scope.password).then(function(firebaseUser) {
@@ -32,7 +34,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	    $scope.$digest();
 	}
 
-	$interval(myTimer, 1000);
+	$interval(myTimer, 1000, 3);
 	
 	$scope.load = function () {
         if (getCookie("user") != "") {
@@ -46,10 +48,6 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	     	$scope.$digest();
 	     	$scope.credits = userObj.credit; //not registering... need async function
 	     	console.log(userObj.credit);
-	     	
-
-	     	//setVariables = setInterval(myTimer, 1000);
-	     	// console.log(myVar);
         }
     }
 
@@ -80,17 +78,6 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	    }
 	    return "";
 	}
-	// function checkCookie() {
-	//     var username = getCookie("user");
-	//     if (username!="") {
-	//         alert("Welcome again " + username);
-	//     } else {
-	//         username = prompt("Please enter your name:", "");
-	//         if (username != "" && username != null) {
-	//             setCookie("username", username, 1);
-	//         }
-	//     }
-	// }
 	
 	$scope.signIn = function() {
 		firebase.auth().signInWithEmailAndPassword($scope.email, $scope.password).then(function(firebaseUser) {
@@ -102,10 +89,8 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 		console.log(userObj);
 		$scope.handle = true; 
 		setCookie("user", user); 
-     	$scope.$digest();
-     	$scope.credits = userObj.credit; 
-     	console.log(userObj.credit);
-     	//setVariables = setInterval(myTimer, 1000);
+     	$scope.$digest(); 	
+     	myTimer(); 
 
 
    	}).catch(function(error) {
@@ -182,15 +167,18 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 
 	$scope.addPost = function() {
 		$scope.posts.$add({
+			showComments: false, 
 			user: userObj.handle, 
 			userImage: userObj.image,
-		  	text: $scope.newPostText,
+		  	text: $scope.newPostText ? $scope.newPostText : "",
 		  	cents: 0,
 			image: imgUrl? imgUrl : "",
 		  	time: firebase.database.ServerValue.TIMESTAMP,
 		  	comments: 0
 		});
-		console.log(userObj.handle);
+		var form = document.getElementById("addingPost");
+		form.reset();
+		$scope.fileName = false; 
 	};
 
 	$scope.addComment = function(post, comment) {
@@ -203,20 +191,38 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 		}
 		post.cents += 2; 
 		$scope.posts.$save(post); 
+		userObj.credit -= 2; 
+
+		userObj.$save(); 
+		myTimer();
+
+		var tarea = document.querySelectorAll(".addComm");
+		var i;
+		for (i = 0; i < tarea.length; i++) {
+		    tarea[i].value = "";
+		}
+
 	}
-	$scope.yesComments = false; 
+
+	//$scope.yesComments = false; 
+
 	$scope.displayComments = function(post) {
-		$scope.yesComments = !$scope.yesComments; 
-		$scope.commentArr = post.comments;
+		//$scope.yesComments = !$scope.yesComments; 
+		post.showComments = !post.showComments; 
+
+		$scope.$digest();
 	}
 
 	$scope.likePost = function(post) {
 		post.cents++;
 		$scope.posts.$save(post); 
+		userObj.credit--; 
+
+		userObj.$save(); 
+		myTimer();
 	}
 
 	$scope.addOneDollar = function() {
-		console.log(userObj);
 		userObj.credit += 100; 
 		userObj.$save(); 
 	}

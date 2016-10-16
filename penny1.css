@@ -30,6 +30,7 @@ textarea {
     -webkit-box-shadow: none !important;
     -moz-box-shadow: none !important;
     box-shadow: none !important;
+    width: 90% !important;
 }
 
 nav {
@@ -51,15 +52,15 @@ nav {
 }
 
 .container {
-	/*margin-left: auto;
-	margin-right: auto;*/
-	/*width: 600px;*/
+  /*margin-left: auto;
+  margin-right: auto;*/
+  /*width: 600px;*/
   padding: 0;
 }
 
 ul {
-	list-style: none;
-	padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .buttons {
@@ -116,6 +117,7 @@ ul {
 
 .postpara {
   padding-left: 5rem;
+  padding-right: 0.8em;
 }
 
 .commentSection {
@@ -128,6 +130,14 @@ ul {
 
   color: white;
   border: none;
+}
+
+.cents {
+  height: 4rem;
+  width: 4rem;
+
+  margin-left: -1.9rem;
+  margin-top: 1.3rem;
 }
 
 .postContent {
@@ -150,7 +160,7 @@ background: white;
 }
 
 .md-button {
-	background: #BDBDBD;
+  background: #BDBDBD;
   padding: 0 6px 0 6px;
   margin: 6px 0px 6px 0px;
   min-width: 88px;
@@ -165,20 +175,20 @@ background: white;
 }
 
 li {
-	background-color: #F5F5F5;
-	padding: 20px;
-	margin-top: 10px;
+  background-color: #F5F5F5;
+  padding: 20px;
+  margin-top: 10px;
 }
 
 .posts {
-	clear:both;
+  clear:both;
 }
 
 #addPost {
-	background-color: #F5F5F5;
-	padding: 2rem;
+  background-color: #F5F5F5;
+  padding: 2rem;
 }
 
 .commenter {
-	font-size: 8px;
+  font-size: 8px;
 }
