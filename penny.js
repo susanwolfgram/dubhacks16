@@ -3,7 +3,9 @@ var app = angular.module("myApp", ["firebase"]);
 app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $firebaseAuth) {
 	
 	$scope.addUser = function() {
-		firebase.auth().createUserWithEmailAndPassword($scope.email, $scope.password).catch(function(error) {
+		firebase.auth().createUserWithEmailAndPassword($scope.email, $scope.password).then(function(firebaseUser) {
+     	console.log("Signed in as:", firebaseUser.uid);
+   	}).catch(function(error) {
 		  // Handle Errors here.
 		  var errorCode = error.code;
 		  var errorMessage = error.message;
