@@ -113,6 +113,11 @@ ul {
   border: none;
 }
 
+a.hoverNone:hover {
+  /*text-decoration: none !important;*/
+  color: #FF6300 !important;
+}
+
 .writeComment {
 /*background: rgba(216,100,46,0.18);
 border: 1px solid #D8642F;*/

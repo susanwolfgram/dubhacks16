@@ -104,16 +104,16 @@
 
 					<!-- <img src="icons/like.svg" alt="Like" class="db buttons" /> -->
 					<!-- Save -->
-					<div class="save buttons"></div>
+					<!-- <div class="save buttons"></div> -->
 					<!-- <img src="icons/save.png" alt="Like" class="db buttons" /> -->
 				</div>
 
-				<div class="postContent dib v-top">
+				<div class="postContent dib v-top pl3 w-90">
 					<div class="name mt0 w-100 db">
 			        	<h1 class="name mt0 white">{{post.user}}</h1>
 		        	</div>
 
-			        <p>{{post.text}}</p>
+			        <p class="f3 black-70 lh-copy">{{post.text}}</p>
 			        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" width="500px"  />
 		        </div>
 		        
@@ -125,7 +125,8 @@
 						<button ng-click="addComment(post, comment)" class="mt0 fr cf postComment br3 f4 pa2 ph3 bg-orange">Post</button>
 					</div>
 
-					<button ng-click="displayComments(post)">Show all comments</button>
+					<!-- <button ng-click="displayComments(post)">Show all comments</button> -->
+					<p class="tc orange f4 center"><a href="" ng-click="displayComments(post)" class="orange hoverNone">Show all comments</a></p>
 			        <div id="comments" ng-show="yesComments" >
 			        	<p ng-repeat="comment in commentArr">{{comment.comment}}</p>
 			        	<div class="writeComment w-90 center pa3 pl4 br3 ba b--black-70 f3">
