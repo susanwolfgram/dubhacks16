@@ -87,6 +87,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 		firebase.auth().signOut().then(function() {
 			document.cookie = "user=;";
 			$scope.handle = false; 
+			$scope.$digest();
 		  // Sign-out successful.
 		}, function(error) {
 		  // An error happened.
