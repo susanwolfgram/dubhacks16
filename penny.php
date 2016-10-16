@@ -78,7 +78,7 @@
 	<div class="container">
 		<nav>
 			<button class="md-button" ng-click="signOut()" ng-show="handle">Sign Out</button>
-			<div class="head-circle" style="float: left;"></div>	
+			<div style="float: left;">Penny-fyt</div>	
 			<p ng-show="handle">Logged in: {{userName}} Credits: {{credits}}</p>
 			 <!-- <div class="dropdown">
   				<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">My Account</button>
