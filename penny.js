@@ -9,7 +9,7 @@ myApp.controller('myCtrl', function($scope, $firebaseAuth, $firebaseArray, $fire
 	// }
 	    // Create a variable 'ref' to reference your firebase storage
 	var ref = new Firebase("https://penny-fyt-123.firebaseio.com/");
-	console.log($scope.email);
+	console.log("here");
 	console.log($scope.password);
 	firebase.auth().signInWithEmailAndPassword($scope.user.email, $scope.user.password).catch(function(error) {
 	  // Handle Errors here.
