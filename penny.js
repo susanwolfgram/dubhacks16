@@ -29,14 +29,14 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
   // download the data into a local object
   //$scope.data = $firebaseObject(ref);
   // putting a console.log here won't work, see below
-  var ref = firebase.database().ref().child("messages");
+  var ref = firebase.database().ref().child("posts");
   // create a synchronized array
-  $scope.messages = $firebaseArray(ref);
+  $scope.posts = $firebaseArray(ref);
   // add new items to the array
   // the message is automatically added to our Firebase database!
-  $scope.addMessage = function() {
-    $scope.messages.$add({
-      text: $scope.newMessageText
+  $scope.addPost = function() {
+    $scope.posts.$add({
+      text: $scope.newPostText
     });
   };
 

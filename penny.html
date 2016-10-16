@@ -45,24 +45,24 @@
 		<form ng-submit="addUser()">
 			<input type="text" ng-model="email"/>
 			<input type="text" ng-model="password"/>
-			<button type="submit">Add Message</button>
+			<button type="submit">Create Account</button>
 		</form>
 		 <!-- <input type="text" ng-model="data.text"/> -->
     	<!-- all changes from our Firebase database magically appear here! -->
     	<!-- <h1>You said: {{ data.text }}</h1> -->
 
 	    <ul>
-	      <li ng-repeat="message in messages">
+	      <li ng-repeat="post in posts">
 	        <!-- edit a message -->
-	        <input ng-model="message.text" ng-change="messages.$save(message)" />
+	        <input ng-model="post.text" ng-change="posts.$save(post)" />
 	        <!-- delete a message -->
-	        <button ng-click="messages.$remove(message)">Delete Message</button>
+	        <button ng-click="posts.$remove(post)">Delete Message</button>
 	      </li>
 	    </ul>
 	    <!-- push a new message onto the array -->
-	    <form ng-submit="addMessage()">
-	      <input ng-model="newMessageText" />
-	      <button type="submit">Add Message</button>
+	    <form ng-submit="addPost()">
+	      <input ng-model="newPostText" />
+	      <button type="submit">Add Post</button>
 	    </form>
 	</body>
 </html>
