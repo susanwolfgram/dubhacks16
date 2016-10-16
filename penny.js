@@ -32,11 +32,17 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
         }
     }
 
-    function setCookie(cname, cvalue, exdays) {
-	    var d = new Date();
-	    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-	    var expires = "expires="+ d.toUTCString();
-	    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+ //    function setCookie(cname, cvalue, exdays) {
+	//     //var d = new Date();
+	//     //d.setTime(d.getTime() + (exdays*24*60*60*1000));
+	//     //var expires = "expires="+ d.toUTCString();
+	//     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+	// }
+	function setCookie(cname, cvalue) {
+	    //var d = new Date();
+	    //d.setTime(d.getTime() + (exdays*24*60*60*1000));
+	    //var expires = "expires="+ d.toUTCString();
+	    document.cookie = cname + "=" + cvalue + ";";
 	}
 
 	function getCookie(cname) {
@@ -73,7 +79,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 		userObj = $firebaseObject(currentUser);
 		console.log(userObj);
 		$scope.handle = true; 
-		setCookie("user", user, 1); 
+		setCookie("user", user); 
      	$scope.$digest();
    	}).catch(function(error) {
 		  // Handle Errors here.
@@ -85,7 +91,8 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	$scope.signOut = function() {
 		firebase.auth().signOut().then(function() {
 			// document.cookie = "user=;";
-			document.cookie = "user=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+			//document.cookie = "user=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+			setCookie("user", "");
 			$scope.handle = false; 
 			$scope.$digest();
 		  // Sign-out successful.
