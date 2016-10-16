@@ -3,7 +3,7 @@ var myApp = angular.module('myApp', ['firebase']);
 // var mainApp = firebase.initializeApp({
 //     console.log("init");
 //   });
-Firebase App.initializeApp();
+myApp.initializeApp();
 // Bind controller, passing in $scope, $firebaseAuth, $firebaseArray, $firebaseObject
 myApp.controller('myCtrl', function($scope, $firebaseAuth, $firebaseArray, $firebaseObject){
 	$scope.user = {}
