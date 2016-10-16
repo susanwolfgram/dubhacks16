@@ -67,8 +67,8 @@
 
 		<!-- sign in -->
 		<form ng-submit="signIn()" ng-show="!handle" >
-			<input class="form-control" type="text" ng-model="email"/>
-			<input class="form-control" type="text" ng-model="password"/>
+			<input class="form-control" type="text" placeholder="Email Address" ng-model="email"/>
+			<input class="form-control" type="password" placeholder="Password" ng-model="password"/>
 			<button class="form-control" type="submit">Sign In</button>
 		</form>
 
