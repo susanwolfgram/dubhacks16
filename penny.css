@@ -107,6 +107,10 @@ div.post, div.writeComment, div.comment {
     background-color: white;
 }
 
+div.post, div.writeComment {
+    overflow: hidden;
+}
+
 div.post h1 {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -119,6 +123,15 @@ div.post h1, div.post p {
     padding: 10px 30px 10px 50px;
 }
 
+div.post p {
+    margin-bottom: 0px;
+}
+
+div.post button {
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
 div.writeComment, div.comment {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -128,7 +141,6 @@ div.writeComment, div.comment {
 div.writeComment {
     width: 90%;
     color: #CC5608;
-    overflow: hidden;
 }
 
 div.comment {
