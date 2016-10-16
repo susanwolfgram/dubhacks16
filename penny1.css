@@ -49,3 +49,8 @@ ul {
   border: none;
   outline: none;
 }
+
+
+#posts {
+	clear:both;
+}

@@ -86,7 +86,7 @@
 	    </div>
 	
 		<!-- Posts -->
-		<div ng-show="handle">
+		<div id="posts" ng-show="handle">
 		    <ul >
 		      <li ng-repeat="post in posts | orderBy : 'cents' : true">
 		      <div>
