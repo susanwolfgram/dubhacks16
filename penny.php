@@ -75,7 +75,7 @@
 		<!-- Add Post  -->
 	    <div id="addPost" ng-show="handle">
 				<!-- <div class="post"> -->
-			    <form ng-submit="addPost()" ng-show="handle">
+			    <form id="addingPost" ng-submit="addPost()" ng-show="handle">
 			      <textarea ng-model="newPostText" placeholder="Compose a post..." class="form-control" rows="5"></textarea>
 
 			      <!-- <input type="file" onchange="angular.element(this).scope().previewFile()" style="float:left;" class="filestyle" data-classButton="btn btn-primary" data-input="false" data-classIcon="icon-plus" data-buttonText="Upload an image" /> -->

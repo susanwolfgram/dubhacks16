@@ -174,7 +174,8 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 		  	time: firebase.database.ServerValue.TIMESTAMP,
 		  	comments: 0
 		});
-		console.log(userObj.handle);
+		var form = document.getElementById("addingPost");
+		form.reset();
 	};
 
 	$scope.addComment = function(post, comment) {
