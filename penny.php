@@ -103,9 +103,23 @@
 		<!-- Posts -->
 		<div class="posts" ng-show="handle">
 		    <ul >
-		      <li ng-repeat="post in posts | orderBy : 'cents' : true">
-		
-		        <h1><img src="{{post.userImage}}" alt="user image" height="50px" style="border-radius: 20px;" />{{post.user}}</h1>
+		      <li ng-repeat="post in posts | orderBy : 'cents' : true" class="ml5 mt4 br3 ba b--red">
+				<div class="dib w3 tc">
+					<!-- Profile pic -->
+					<img src="{{post.userImage}}" alt="user image" class="postAvatar br-100 mw4 ba b--red db" />
+					<!-- Like -->
+					<div class="like buttons"></div>
+
+					<!-- <img src="icons/like.svg" alt="Like" class="db buttons" /> -->
+					<!-- Save -->
+					<div class="save buttons"></div>
+		       <!--  <h1><img src="{{post.userImage}}" alt="user image" height="50px" style="border-radius: 20px;" />{{post.user}}</h1> -->
+		       </div>
+
+				<div class="postContent dib v-top">
+				<div class="name mt0 w-100 db">
+		        	<h1 class="name mt0 white">{{post.user}}</h1>
+	        	</div>
 		        <p>{{post.text}}</p>
 		        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" width="500px"  />
 		        <br />

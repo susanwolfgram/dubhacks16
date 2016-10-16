@@ -204,7 +204,6 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	$scope.addOneDollar = function() {
 		userObj.credit += 100; 
 		userObj.$save(); 
-		//myTimer(); 
 	}
 
 	function addOneDollar() {
