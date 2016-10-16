@@ -51,9 +51,9 @@
 		          data-locale="auto">  	
 		  </script>
 		</form>
-	<?php if ($_GET["dollar"]) {
-		addOneDollar();
-	} ?>
+	<?php if ($_GET["dollar"]) { ?>
+		<p ng-init="addOneDollar()">Added One Dollar</p>
+	<?php } ?>
 		<!-- <button ng-click="addOneDollar()">Test Add One Dollar</button> -->
 		<form ng-submit="signIn()" ng-show="!handle" >
 			<input type="text" ng-model="email"/>
