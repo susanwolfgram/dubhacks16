@@ -63,7 +63,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
     var imagesRef = storageRef.child('images');
     var imgUrl; 
     
-    function previewFile(){
+    $scope.previewFile = function(){
     var file =document.querySelector('input[type=file]').files[0];
     var metadata = {
     	contentType: 'image/jpeg'
