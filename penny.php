@@ -80,7 +80,7 @@
 			        <img src="" id="preview" height="200px" width="200px" alt="Image preview..." style="float:right">
 			        <!-- <button ng-click="addImage()">Add Post</button> -->
 		    	<!-- </div> -->
-			      <md-button type="submit">Add Post</md-button>
+			      <button class="md-button" type="submit">Add Post</button>
 			    </form>
 			    </div>
 	    </div>
@@ -116,7 +116,7 @@
 	    
 
 	    
-    	<md-button ng-click="signOut()" ng-show="handle">Sign Out</md-button>
+    	<button class="md-button" ng-click="signOut()" ng-show="handle">Sign Out</button>
     	</div>
     
 	</body>
