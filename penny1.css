@@ -14,7 +14,8 @@ body {
 header {
     background-color: #8D6E63;
     padding: 5px;
-    /*margin-bottom: 30px;*/
+    margin-bottom: 30px;
+    overflow: hidden;
 }
 
 .head-circle {
