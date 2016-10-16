@@ -14,15 +14,16 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	// 	  var errorMessage = error.message;
 	// 	});
 	// }
+	var userObj;
 	$scope.signIn = function() {
 		firebase.auth().signInWithEmailAndPassword($scope.email, $scope.password).then(function(firebaseUser) {
      	console.log("Signed in as:", firebaseUser.uid);
      	user = firebaseUser.uid; 
      	$scope.userEmail = $scope.email; 
      	var currentUser = firebase.database().ref().child("users").child(user);
-		var userObj = $firebaseObject(currentUser);
+		userObj = $firebaseObject(currentUser);
 		console.log(userObj);
-		console.log(userObj["handle"]);
+		//console.log(userObj["handle"]);
 		// var currentUser = userArr.$indexFor("" + user);
 		// console.log(userArr[currentUser]);
      	$scope.$digest();
@@ -88,6 +89,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 		  	time: firebase.database.ServerValue.TIMESTAMP,
 		  	comments: 0
 		});
+		console.log(userObj.handle);
 	};
 
 	$scope.addComment = function(post, comment) {
