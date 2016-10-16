@@ -19,6 +19,9 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
      	console.log("Signed in as:", firebaseUser.uid);
      	user = firebaseUser.uid; 
      	$scope.userEmail = $scope.email; 
+     	$timeout(function () {
+        	$scope.userEmail = false;
+    	}, 1000);
    	}).catch(function(error) {
 		  // Handle Errors here.
 		  var errorCode = error.code;
