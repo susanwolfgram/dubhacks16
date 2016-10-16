@@ -194,7 +194,10 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 
 		userObj.$save(); 
 		myTimer();
-		$scope.comment = '';
+
+		var form = document.getElementById("addComm");
+		form.innerHTML('');
+
 	}
 
 	//$scope.yesComments = false; 
