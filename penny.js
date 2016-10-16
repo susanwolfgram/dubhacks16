@@ -197,7 +197,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 
 		// var form = document.getElementById("addComm");
 		// form.innerHTML('');
-		$('#addComm').val('')
+		$('#addComm').val('');
 
 	}
 
