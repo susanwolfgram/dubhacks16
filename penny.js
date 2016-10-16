@@ -73,7 +73,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
     // var commentArr = $firebaseArray(post.comments);
     // commentArr.push(comment); 
     console.log(post.comments);
-    post.comments.push(comment;)
+    post.comments.push(comment);
     //post.comments += [comment]; 
     $scope.posts.$save(post); 
     // $scope.songs = []; 
