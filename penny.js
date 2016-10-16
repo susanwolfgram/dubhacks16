@@ -2,12 +2,14 @@ var app = angular.module("myApp", ["firebase"]);
 
 app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $firebaseAuth) {
 	
-	firebase.auth().createUserWithEmailAndPassword($scope.email, $scope.password).catch(function(error) {
-	  // Handle Errors here.
-	  var errorCode = error.code;
-	  var errorMessage = error.message;
-	  // ...
-	});
+	$scope.addUser = function() {
+		firebase.auth().createUserWithEmailAndPassword($scope.email, $scope.password).catch(function(error) {
+		  // Handle Errors here.
+		  var errorCode = error.code;
+		  var errorMessage = error.message;
+		  // ...
+		});
+	}
 
 	// var auth = $firebaseAuth();
 

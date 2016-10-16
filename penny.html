@@ -42,8 +42,11 @@
 
 	<!-- Initiate app and controller on body -->
 	<body ng-app="myApp" ng-controller="myCtrl">
-		<input type="text" ng-model="email"/>
-		<input type="text" ng-model="password"/>
+		<form ng-submit="addUser()">
+			<input type="text" ng-model="email"/>
+			<input type="text" ng-model="password"/>
+			<button type="submit">Add Message</button>
+		</form>
 		 <!-- <input type="text" ng-model="data.text"/> -->
     	<!-- all changes from our Firebase database magically appear here! -->
     	<!-- <h1>You said: {{ data.text }}</h1> -->
