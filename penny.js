@@ -32,6 +32,10 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 		// var currentUser = userArr.$indexFor("" + user);
 		// console.log(userArr[currentUser]);
      	$scope.$digest();
+     	var date = new Date();
+        date.setTime(date.getTime()+(24*60*60*1000));
+        var expires = date.toGMTString();
+     	document.cookie = "user=" + user ";expires="+expires; 
    	}).catch(function(error) {
 		  // Handle Errors here.
 		  var errorCode = error.code;
