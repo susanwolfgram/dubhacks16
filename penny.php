@@ -95,7 +95,7 @@
 
 
 		<!-- sign in -->
-		<form ng-submit="signIn()" ng-show="!handle" >
+		<form ng-submit="signIn()" ng-show="!handle" id="signInForm">
 			<input class="form-control" type="text" placeholder="Email Address" ng-model="email"/>
 			<input class="form-control" type="password" placeholder="Password" ng-model="password"/>
 			<button class="form-control" type="submit">Sign In</button>

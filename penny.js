@@ -91,7 +91,8 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 		setCookie("user", user); 
      	$scope.$digest(); 	
      	myTimer(); 
-
+     	var form2 = document.getElementById("signInForm");
+		form2.reset();
 
    	}).catch(function(error) {
 		  // Handle Errors here.
@@ -196,11 +197,6 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 		userObj.$save(); 
 		myTimer();
 
-		var tarea = document.querySelectorAll(".addComm");
-		var i;
-		for (i = 0; i < tarea.length; i++) {
-		    tarea[i].value = "";
-		}
 
 	}
 
