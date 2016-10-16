@@ -114,6 +114,7 @@
 		        <br />
 		        <h3 ng-click="displayComments(post)">Open Comments</h3>
 		        <div id="comments" ng-show="yesComments" >
+		        	<hr />
 		        	<p ng-repeat="comment in commentArr">{{comment.comment}} <span class="commenter">-{{comment.user}}</span></p><hr /> 
 		        </div>
 		        <div class="writeComment">
