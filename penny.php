@@ -48,14 +48,15 @@
 		<nav>
 			<button class="md-button" ng-click="signOut()" ng-show="handle">Sign Out</button>
 			<div class="head-circle" style="float: left;"></div>	
-			 <div class="dropdown">
+			<p>Credits: {{credits}}</p>
+			 <!-- <div class="dropdown">
   				<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">My Account</button>
  				 <ul class="dropdown-menu">
 				    <li><a href="#">Credits: {{credits}}</a></li>
 				    <li><a href="#">Log Out</a></li>
-				    <!-- <li><a href="#">JavaScript</a></li> -->
+				    
   				</ul>
-			</div>
+			</div> -->
 		</nav>
 
 		<!-- Add Money -->
