@@ -129,7 +129,7 @@
 
 	    
     	<button ng-click="signOut()" ng-show="handle">Sign Out</button>
-    	</div>
+    
 	</body>
 </html>
 
