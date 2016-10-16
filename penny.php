@@ -127,7 +127,8 @@
 					<!-- Profile pic -->
 					<img src="{{post.userImage}}" alt="user image" class="postAvatar br-100 mw4 ba b--orange db" />
 					<!-- Like -->
-					<a href="" ng-click="likePost(post)"><div class="like buttons"></div></a>					 {{post.cents}} cents
+					<a href="" ng-click="likePost(post)"><div class="like buttons"></div></a>					 
+					<p>{{post.cents}} cents</p>
 		       </div>
 
 				<div class="postContent dib v-top pl3 w-100">
