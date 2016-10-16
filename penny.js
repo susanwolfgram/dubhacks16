@@ -58,17 +58,18 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
   };
   $scope.addComment = function(post, comment) {
     if (post.comments == 0) {
-      var foo = new Firebase("https://penny-fyt-123.firebaseio.com/posts/" + post.$id);      
-      var newChildRef = foo.push([]);
-      post.comment = newChildRef.key();
-      $scope.posts.$save(post);  
+    	console.log(post.comments);
+      // var foo = new Firebase("https://penny-fyt-123.firebaseio.com/posts/" + post.$id);      
+      // var newChildRef = foo.push([]);
+      // post.comment = newChildRef.key();
+      // $scope.posts.$save(post);  
     } 
-    $scope.songs = []; 
-    var baz = new Firebase("https://penny-fyt-123.firebaseio.com/posts/" + post.$id + "/" + post.comment);      
-    var newChild = baz.push(angular.copy(comment));
-    var playlist = $firebaseArray(baz); 
-    $scope.posts = playlist;
-    console.log(playlist);      
+    // $scope.songs = []; 
+    // var baz = new Firebase("https://penny-fyt-123.firebaseio.com/posts/" + post.$id + "/" + post.comment);      
+    // var newChild = baz.push(angular.copy(comment));
+    // var playlist = $firebaseArray(baz); 
+    // $scope.posts = playlist;
+    // console.log(playlist);      
   }
 
 
