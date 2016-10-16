@@ -64,7 +64,7 @@
     	<!-- all changes from our Firebase database magically appear here! -->
     	<!-- <h1>You said: {{ data.text }}</h1> -->
 
-	    <ul ng-show="userEmail">
+	    <ul ng-show="handle">
 	      <li ng-repeat="post in posts | orderBy : 'cents' : true">
 	        <!-- edit a message -->
 	        <!-- <input ng-model="post.text" ng-change="posts.$save(post)" /> -->
