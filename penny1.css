@@ -25,3 +25,7 @@ header {
     border-radius: 15px;
     background: gray;
 }
+
+.container {
+	width: 600px;
+}
