@@ -8,7 +8,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	var usersFB = firebase.database().ref().child("users"); 
 	var usersArr = $firebaseArray(usersFB); 
 	var userObj;
-
+	$scope.userName = false; 
 	//var userEmail; 
 	// $scope.addUser = function() {
 	// 	firebase.auth().createUserWithEmailAndPassword($scope.email, $scope.password).then(function(firebaseUser) {
@@ -75,6 +75,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	//         }
 	//     }
 	// }
+	var myVar;
 	$scope.signIn = function() {
 		firebase.auth().signInWithEmailAndPassword($scope.email, $scope.password).then(function(firebaseUser) {
      	console.log("Signed in as:", firebaseUser.uid);
@@ -88,11 +89,19 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
      	$scope.$digest();
      	$scope.credits = userObj.credit; 
      	console.log(userObj.credit);
+     	myVar = setInterval(myTimer, 1000);
+
+
    	}).catch(function(error) {
 		  // Handle Errors here.
 		  var errorCode = error.code;
 		  var errorMessage = error.message;
 		});
+	}
+
+	function myTimer() {
+	    $scope.credits = userObj.credit;
+	    $scope.userName = userObj.handle; 
 	}
 
 	$scope.signOut = function() {
@@ -102,6 +111,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 			setCookie("user", "");
 			$scope.handle = false; 
 			$scope.$digest();
+			clearInterval(myVar);
 		  // Sign-out successful.
 		}, function(error) {
 		  // An error happened.
