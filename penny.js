@@ -205,8 +205,8 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 
 	//$scope.yesComments = false; 
 
-	$scope.displayComments = function(post) {
-		$scope.yesComments= !$scope.yesComments; 
+	$scope.displayComments = function(post, time) {
+		$scope.yesComments+time= !$scope.yesComments+time; 
 		$scope.commentArr = post.comments;
 		$scope.$digest();
 	}
