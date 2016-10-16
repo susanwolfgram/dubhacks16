@@ -24,13 +24,11 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
      	var currentUser = firebase.database().ref().child("users").child(user);
 		userObj = $firebaseObject(currentUser);
 		console.log(userObj);
+		$scope.handle = true; 
 		//console.log(userObj["handle"]);
 		// var currentUser = userArr.$indexFor("" + user);
 		// console.log(userArr[currentUser]);
      	$scope.$digest();
-   	}).then(function(userObj) {
-   		$scope.handle = userObj.handle; 
-   		console.log(userObj.handle);
    	}).catch(function(error) {
 		  // Handle Errors here.
 		  var errorCode = error.code;
