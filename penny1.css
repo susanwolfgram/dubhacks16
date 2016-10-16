@@ -96,9 +96,27 @@ ul {
 
 }
 
+.posts {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
 .name {
-  background: #D7855F;
+  background: #FF6300;
   min-width: 100%;
+
+  /*padding: 7px 0 7px 21px;*/
+  padding-left: 2.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.postpara {
+  padding-left: 5rem;
+  padding-right: 0.8em;
 }
 
 .commentSection {
@@ -111,6 +129,13 @@ ul {
 
   color: white;
   border: none;
+}
+
+.postContent {
+  /*position: absolute;*/
+  /*right: 0;*/
+  /*left: 35px;*/
+  /*width: auto !important;*/
 }
 
 a.hoverNone:hover {
