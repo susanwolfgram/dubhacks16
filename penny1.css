@@ -51,6 +51,20 @@ ul {
 	padding: 0;
 }
 
+li.ml5.mt4.br3.ba.b--red.ng-scope {
+  padding: 0px;
+}
+
+.name.mt0.w-100.db, p.ng-binding {
+  padding: 5px;
+}
+
+.postContent.dib.v-top {
+  background: white;
+  width: 90%;
+  float: right;
+}
+
 .buttons {
   margin-left: -3.9rem;
   margin-top: 1.3rem;
