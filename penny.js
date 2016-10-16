@@ -4,9 +4,9 @@ var myApp = angular.module('myApp', ['firebase']);
 // Bind controller, passing in $scope, $firebaseAuth, $firebaseArray, $firebaseObject
 myApp.controller('myCtrl', function($scope, $firebaseAuth, $firebaseArray, $firebaseObject){
 	$scope.user = {}
-	// $scope.submit = function() {
-	// 	alert('Name: ' + $scope.user.handle + '   Email:' + $scope.user.email)
-	// }
+	$scope.submit = function() {
+		alert('   Email:' + $scope.user.email)
+	}
 	    // Create a variable 'ref' to reference your firebase storage
 	var ref = new Firebase("https://penny-fyt-123.firebaseio.com/");
 	console.log($scope.email);
