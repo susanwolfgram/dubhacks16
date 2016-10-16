@@ -59,42 +59,42 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	};
 
 	//IMAGES
-	// var storageRef = firebase.storage().ref();
- //    var imagesRef = storageRef.child('images');
- //    var imgUrl; 
+
+	var storageRef = firebase.storage().ref();
+    var imagesRef = storageRef.child('images');
+    var imgUrl; 
     
- //    $scope.previewFile = function(){
- //    var file =document.querySelector('input[type=file]').files[0];
- //    var metadata = {
- //    	contentType: 'image/jpeg'
- //    };
+    function previewFile(){
+    var file =document.querySelector('input[type=file]').files[0];
+    var metadata = {
+    	contentType: 'image/jpeg'
+    };
 
- //    var uploadTask = storageRef.child('images/' + file.name).put(file, metadata);
- //    uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
- //    function(snapshot) {
- //        var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
- //        console.log('Upload is ' + progress + '% done');
- //        switch (snapshot.state) {
- //            case firebase.storage.TaskState.PAUSED: 
- //                console.log('Upload is paused');
- //                break;
- //            case firebase.storage.TaskState.RUNNING:
- //                console.log('Upload is running');
- //                break;
- //        }
- //        }, function(error) {
- //            console.log('error while uploading')
- //        }, function() {
- //            var starsRef = storageRef.child('images/'+ file.name);
- //            starsRef.getDownloadURL().then(function(url) {
- //                document.querySelector('#preview').src=url;
- //                imgUrl = url; 
- //            }).catch(function(error) {
- //                console.log('error while downloading file');
- //            });
- //        });
- //    }
-
+    var uploadTask = storageRef.child('images/' + file.name).put(file, metadata);
+    uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
+    function(snapshot) {
+        var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log('Upload is ' + progress + '% done');
+        switch (snapshot.state) {
+            case firebase.storage.TaskState.PAUSED: 
+                console.log('Upload is paused');
+                break;
+            case firebase.storage.TaskState.RUNNING:
+                console.log('Upload is running');
+                break;
+        }
+        }, function(error) {
+            console.log('error while uploading')
+        }, function() {
+            var starsRef = storageRef.child('images/'+ file.name);
+            starsRef.getDownloadURL().then(function(url) {
+                document.querySelector('#preview').src=url;
+                imgUrl = url; 
+            }).catch(function(error) {
+                console.log('error while downloading file');
+            });
+        });
+    }
 	// var storageRef = firebase.storage().ref();
 	// var imagesRef = storageRef.child('images');
 	// var imgUrl; 
