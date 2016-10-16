@@ -13,7 +13,8 @@
       'amount'   => 100,
       'currency' => 'usd'
   ));
-  echo('<script type="text/javascript">');
+  echo('<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script type="text/javascript">');
   include_once('penny.js'); 
   echo('addOneDollar()');
   echo('</script>'); 
