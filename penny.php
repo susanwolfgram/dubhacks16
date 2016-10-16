@@ -88,7 +88,7 @@
 	        <img src="" id="preview" height="200px" width="200px" alt="Image preview..." style="float:right">
 	        <!-- <button ng-click="addImage()">Add Post</button> -->
     	</div>
-    	<button ng-click="signOut()">Sign Out</button>
+    	<button ng-click="signOut()" ng-show="handle">Sign Out</button>
 	</body>
 </html>
 
