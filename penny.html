@@ -94,9 +94,9 @@
 		<!-- Posts -->
 		<div class="posts" ng-show="handle">
 		    <ul >
-		      <li ng-repeat="post in posts | orderBy : 'cents' : true" class="mt4 br3 ba b--orange pa0 bg-white w-80 ml6">
+		      <li ng-repeat="post in posts | orderBy : 'cents' : true" class="mt4 br3 ba b--orange pa0 bg-white w-80 ml6 posts">
 		
-				<div class="dib w3 tc">
+				<div class="dib w3 tc absolute">
 					<!-- Profile pic -->
 					<img src="{{post.userImage}}" alt="user image" class="postAvatar br-100 mw4 ba b--orange db" />
 					<!-- Like -->
@@ -108,13 +108,13 @@
 					<!-- <img src="icons/save.png" alt="Like" class="db buttons" /> -->
 				</div>
 
-				<div class="postContent dib v-top pl3 w-90">
-					<div class="name mt0 w-100 db">
-			        	<h1 class="name mt0 white">{{post.user}}</h1>
+				<div class="postContent dib v-top pl3 w-100">
+					<div class="name mt0 mb3 w-100 db b">
+			        	<h1 class="name mt0 mb0 white">{{post.user}}</h1>
 		        	</div>
 
-			        <p class="f3 black-70 lh-copy">{{post.text}}</p>
-			        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" width="500px"  />
+			        <p class="f3 black-70 lh-copy postpara">{{post.text}}</p>
+			        <img ng-show="post.image != ''" src="{{post.image}}" alt="image" width="500px" class="pl5" />
 		        </div>
 		        
 		        <div class="commentSection pb2 pt2">
@@ -129,7 +129,7 @@
 					<p class="tc orange f4 center"><a href="" ng-click="displayComments(post)" class="orange hoverNone">Show all comments</a></p>
 			        <div id="comments" ng-show="yesComments" >
 			        	<p ng-repeat="comment in commentArr">{{comment.comment}}</p>
-			        	<div class="writeComment w-90 center pa3 pl4 br3 ba b--black-70 f3">
+			        	<div class="writeComment w-90 center pa3 pl4 br3 ba b--black-70 f3 mb2">
 						<p class="worksans black-70">commenter name here</p>
 						<p class="black-50 f4">comment</p>
 					</div>
