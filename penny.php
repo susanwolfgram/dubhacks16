@@ -76,10 +76,9 @@
 				<!-- <div class="post"> -->
 			    <form ng-submit="addPost()" ng-show="handle">
 			      <textarea ng-model="newPostText" placeholder="Compose a post..." class="form-control" rows="5"></textarea>
-			      <input type="file" class="filestyle" data-classButton="btn btn-primary" data-input="false" data-classIcon="icon-plus" data-buttonText="Your label here." onchange="angular.element(this).scope().previewFile()" />
 
 			      <!-- <input type="file" onchange="angular.element(this).scope().previewFile()" style="float:left;" class="filestyle" data-classButton="btn btn-primary" data-input="false" data-classIcon="icon-plus" data-buttonText="Upload an image" /> -->
-			        <!-- <input type="file" onchange="angular.element(this).scope().previewFile()" style="float:left;" /> -->
+			        <input type="file" onchange="angular.element(this).scope().previewFile()" style="float:left;" />
 			        <img ng-show="fileName" src="" id="preview" height="200px" width="200px" alt="Image preview..." style="float:right">
 			  		<br />
 			      <button class="md-button" type="submit" style="display: block;clear: both;">Add Post</button>
@@ -88,7 +87,7 @@
 	    </div>
 	
 		<!-- Posts -->
-		<div id="posts" ng-show="handle">
+		<div class="posts" ng-show="handle">
 		    <ul >
 		      <li ng-repeat="post in posts | orderBy : 'cents' : true">
 		

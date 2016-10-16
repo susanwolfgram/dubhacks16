@@ -51,8 +51,10 @@ ul {
 }
 
 
-#posts {
+.posts {
+	background-color: #F5F5F5;
 	clear:both;
+	padding: 20px;
 }
 
 #addPost {
