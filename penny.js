@@ -1,14 +1,21 @@
 var app = angular.module("myApp", ["firebase"]);
 
 app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $firebaseAuth) {
-	var auth = $firebaseAuth();
+	$scope.authObj.$signInWithEmailAndPassword("skwolf@uw.edu", "123456").then(function(firebaseUser) {
+	  console.log("Signed in as:", firebaseUser.uid);
+	}).catch(function(error) {
+	  console.error("Authentication failed:", error);
+	});
 
-  // login with Facebook
-  auth.$signInWithPopup("facebook").then(function(firebaseUser) {
-    console.log("Signed in as:", firebaseUser.uid);
-  }).catch(function(error) {
-    console.log("Authentication failed:", error);
-  });
+
+	// var auth = $firebaseAuth();
+
+ //  // login with Facebook
+ //  auth.$signInWithPopup("facebook").then(function(firebaseUser) {
+ //    console.log("Signed in as:", firebaseUser.uid);
+ //  }).catch(function(error) {
+ //    console.log("Authentication failed:", error);
+ //  });
   //var ref = firebase.database().ref().child("data");
   //var syncObject = $firebaseObject(ref);
   // synchronize the object with a three-way data binding
