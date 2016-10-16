@@ -190,6 +190,10 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 		}
 		post.cents += 2; 
 		$scope.posts.$save(post); 
+		userObj.credit -= 2; 
+
+		userObj.$save(); 
+		myTimer();
 	}
 
 	//$scope.yesComments = false; 
@@ -203,6 +207,10 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	$scope.likePost = function(post) {
 		post.cents++;
 		$scope.posts.$save(post); 
+		userObj.credit--; 
+
+		userObj.$save(); 
+		myTimer();
 	}
 
 	$scope.addOneDollar = function() {
