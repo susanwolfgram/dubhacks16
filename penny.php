@@ -48,7 +48,8 @@
 		          data-key="<?php echo $stripe['publishable_key']; ?>"
 		          data-description="Access for a year"
 		          data-amount="5000"
-		          data-locale="auto"></script>
+		          data-locale="auto">  	
+		  </script>
 		</form>
 
 		<form ng-submit="signIn()" ng-show="!handle" >
