@@ -3,6 +3,7 @@ var app = angular.module("myApp", ["firebase"]);
 app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $firebaseAuth) {
 	var user; 
 	$scope.handle = false; 
+	$scope.fileName = false; 
 	var currentUser; 
 	var usersFB = firebase.database().ref().child("users"); 
 	var usersArr = $firebaseArray(usersFB); 
@@ -145,6 +146,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
                 console.log('error while downloading file');
             });
         });
+    $scope.fileName = true; 
     }
 
 	$scope.addPost = function() {
