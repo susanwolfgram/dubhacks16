@@ -59,7 +59,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	};
 
 	$scope.addImage = function() {
-		console.log(url);
+		console.log($scope.url);
 		// $scope.posts.$add({
 		// 	user: user, 
 		//   	text: $scope.newPostText,
@@ -69,7 +69,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 		//   	comments: 0
 		// });
 	};
-	
+
 	$scope.addComment = function(post, comment) {
 		if (post.comments == 0) {
 			console.log(post.$id);
