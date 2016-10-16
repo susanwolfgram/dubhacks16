@@ -30,7 +30,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	     	$scope.$digest();
         }
     }
-    
+
     function setCookie(cname, cvalue, exdays) {
 	    var d = new Date();
 	    d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -80,6 +80,16 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 		  // Handle Errors here.
 		  var errorCode = error.code;
 		  var errorMessage = error.message;
+		});
+	}
+
+	$scope.signOut = function() {
+		firebase.auth().signOut().then(function() {
+			document.cookie = "user=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+			$scope.handle = false; 
+		  // Sign-out successful.
+		}, function(error) {
+		  // An error happened.
 		});
 	}
 
