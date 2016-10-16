@@ -22,6 +22,13 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	// 	});
 	// }
 	var setVariables;
+
+	function myTimer() {
+		console.log('hello from the timer');
+	    $scope.credits = userObj.credit;
+	    $scope.userName = userObj.handle; 
+	    $scope.$digest();
+	}
 	
 	$scope.load = function () {
         if (getCookie("user") != "") {
@@ -35,7 +42,8 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 	     	$scope.$digest();
 	     	$scope.credits = userObj.credit; //not registering... need async function
 	     	console.log(userObj.credit);
-	     	setVariables = setInterval(myTimer, 1000);
+	     	$interval(myTimer, 1000);
+	     	//setVariables = setInterval(myTimer, 1000);
 	     	// console.log(myVar);
         }
     }
@@ -92,7 +100,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
      	$scope.$digest();
      	$scope.credits = userObj.credit; 
      	console.log(userObj.credit);
-     	setVariables = setInterval(myTimer, 1000);
+     	//setVariables = setInterval(myTimer, 1000);
 
 
    	}).catch(function(error) {
@@ -102,12 +110,7 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 		});
 	}
 
-	function myTimer() {
-		console.log('hello from the timer');
-	    $scope.credits = userObj.credit;
-	    $scope.userName = userObj.handle; 
-	    $scope.$digest();
-	}
+	
 
 	$scope.signOut = function() {
 		firebase.auth().signOut().then(function() {
@@ -116,7 +119,8 @@ app.controller("myCtrl", function($scope, $firebaseObject, $firebaseArray, $fire
 			setCookie("user", "");
 			$scope.handle = false; 
 			$scope.$digest();
-			clearInterval(myVar);
+			$interval.cancel();
+			//clearInterval(myVar);
 		  // Sign-out successful.
 		}, function(error) {
 		  // An error happened.
